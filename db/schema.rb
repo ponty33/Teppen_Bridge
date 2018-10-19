@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181019210250) do
+ActiveRecord::Schema.define(version: 20181019225518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,11 +31,11 @@ ActiveRecord::Schema.define(version: 20181019210250) do
   end
 
   create_table "assignment_performances", force: :cascade do |t|
-    t.integer "assignment_id"
-    t.integer "student_id"
     t.string "status"
     t.integer "score"
     t.text "feedback"
+    t.integer "assignment_id"
+    t.integer "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -59,21 +59,19 @@ ActiveRecord::Schema.define(version: 20181019210250) do
   end
 
   create_table "programs", force: :cascade do |t|
-    t.integer "teacher_id"
-    t.integer "subject_id"
     t.date "start_date"
     t.date "end_date"
-    t.time "start_time"
-    t.time "end_time"
+    t.integer "teacher_id"
+    t.integer "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "teacher_id"
     t.text "content"
     t.integer "rating"
     t.integer "parent_id"
+    t.integer "teacher_id"
     t.integer "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -104,5 +102,15 @@ ActiveRecord::Schema.define(version: 20181019210250) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "admissions", "programs"
+  add_foreign_key "admissions", "students"
+  add_foreign_key "assignment_performances", "assignments"
+  add_foreign_key "assignment_performances", "students"
+  add_foreign_key "assignments", "programs"
+  add_foreign_key "programs", "subjects"
+  add_foreign_key "programs", "teachers"
+  add_foreign_key "reviews", "parents"
+  add_foreign_key "reviews", "subjects"
   add_foreign_key "reviews", "teachers"
+  add_foreign_key "students", "parents"
 end

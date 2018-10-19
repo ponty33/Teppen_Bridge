@@ -5,11 +5,9 @@ one:
   content: MyText
   start_date: 2018-10-19
   end_date: 2018-10-19
-  program_id: 1
 
 two:
   name: MyString
   content: MyText
   start_date: 2018-10-19
   end_date: 2018-10-19
-  program_id: 1

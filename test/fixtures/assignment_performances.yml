@@ -1,15 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  assignment_id: 1
-  student_id: 1
   status: MyString
   score: 1
   feedback: MyText
 
 two:
-  assignment_id: 1
-  student_id: 1
   status: MyString
   score: 1
   feedback: MyText
