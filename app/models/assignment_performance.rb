@@ -1,0 +1,2 @@
+class AssignmentPerformance < ApplicationRecord
+end

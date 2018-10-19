@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teacher_id: 1
+  subject_id: 1
+  start_date: 2018-10-19
+  end_date: 2018-10-19
+  start_time: 2018-10-19 20:49:17
+  end_time: 2018-10-19 20:49:17
+
+two:
+  teacher_id: 1
+  subject_id: 1
+  start_date: 2018-10-19
+  end_date: 2018-10-19
+  start_time: 2018-10-19 20:49:17
+  end_time: 2018-10-19 20:49:17
