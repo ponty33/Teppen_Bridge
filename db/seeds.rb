@@ -67,6 +67,7 @@ puts "Creating Programs ..."
 
 program1 = Program.create(subject_id:subject1.id, teacher_id:teacher1.id, start_date:20071119, end_date:20071218)
 
+
 Review.create(
   teacher_id: teacher1.id,
   content: 'GG',
