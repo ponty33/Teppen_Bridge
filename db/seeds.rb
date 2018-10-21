@@ -76,7 +76,12 @@ subject1 = Subject.create(name:'Computer', cost: 200)
 
 puts "Creating Programs ..."
 
-program1 = Program.create(subject_id:subject1.id, teacher_id:teacher1.id, start_date:20071119, end_date:20071218)
+program1 = Program.create(
+  subject_id:subject1.id, 
+  teacher_id:teacher1.id, 
+  start_date:20181101, 
+  end_date:20190118
+  )
 
 
 Review.create(

@@ -8,7 +8,6 @@ class Assignment extends React.Component{
   }
   
   componentDidMount() {
-    // console.log('ffff', session['user_id'])
     fetch(`/parents/${this.props.parent_id}/assignments`)
     .then((response) => {
         return response.json();
@@ -24,8 +23,11 @@ class Assignment extends React.Component{
     var assignments = this.state.assignment.map((assignment) => {
       return(
        <div key={assignment.id}>
-        <h2>{assignment.score}</h2>
-        <h2>{assignment.student_id}</h2>
+        <p>=====================================</p>
+        <h2>Assignment Name: {assignment.name}</h2>
+        <h2>Score: {assignment.score}</h2>
+        <h2>Comment: {assignment.feedback}</h2>
+        
        </div>
       )
      })
