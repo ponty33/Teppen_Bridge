@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
-  resources :parents, only: [:index] do
+  resources :parents, only: [:index, :show] do
     resources :admissions, only: [:index, :new, :create]
     resources :reviews, only: [:new, :create]
     resources :assignments, only: [:index]
@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   post '/login', to: 'session#create'
   get '/logout', to: 'session#destroy'
 
+  get '/api', to: 'api#index'
+
+  
 end

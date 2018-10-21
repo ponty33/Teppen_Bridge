@@ -1,13 +1,11 @@
-require 'json'
-
-class AssignmentsController < ApplicationController
+class ApiController < ApplicationController
   
   def index
-    # @assignment = AssignmentPerformance.all
+    @assignment = AssignmentPerformance.all
     
-    #puts @assignment
+    puts @assignment
     puts "DATA PASSING"
-    # render json: @assignment
+    render json: @assignment
     # respond_to do |format|
     #   format.html
     #   format.json { render json: @assignment }

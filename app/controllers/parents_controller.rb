@@ -9,4 +9,7 @@ class ParentsController < ApplicationController
   def create
   end
 
+  def show
+  end
+
 end

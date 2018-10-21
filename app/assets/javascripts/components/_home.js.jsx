@@ -3,7 +3,7 @@ const Home = () => {
     <div>
       <Navbar />
       <div>
-        <h1 class='ass'>KISS MY ASS</h1>
+        <h1 className='ass'>KISS MY ASS</h1>
       </div>
       <Footer />
     </div>
