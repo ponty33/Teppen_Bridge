@@ -15,7 +15,7 @@ class Assignment extends React.Component{
     })
     .then((data) => {
       console.log("Data incoming...");
-      this.setState({ assignment: data})
+      this.setState({ assignment: data })
       console.log("after setting state ",this.state.assignment);
     })
   }
