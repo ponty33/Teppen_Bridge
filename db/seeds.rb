@@ -50,12 +50,23 @@ parent1 = Parent.create(
   password:'123'
 )
 
+parent2 = Parent.create(
+  name:'Gee',
+  email:'def@gmail.com',
+  password: '123'
+)
+
 Student.destroy_all
 puts "Creating Students ..."
 
 student1 = parent1.students.create!({
   name:'Gong',
   age: 12
+})
+
+student2 = parent2.students.create!({
+  name:'Keee',
+  age: 13
 })
 
 Subject.destroy_all
@@ -84,6 +95,14 @@ assignment1 = Assignment.create(
   program_id: program1.id 
 )
 
+assignment2 = Assignment.create(
+  name:'Damn Good',
+  content: 'Soooooo Gooood',
+  start_date: 20180305,
+  end_date: 20180403,
+  program_id: program1.id
+)
+
 AssignmentPerformance.create(
   assignment_id: assignment1.id,
   student_id: student1.id,
@@ -92,7 +111,20 @@ AssignmentPerformance.create(
   feedback: 'Go study'
 )
 
+AssignmentPerformance.create(
+  assignment_id: assignment2.id,
+  student_id: student2.id,
+  status: 'Marked',
+  score: 100,
+  feedback: 'GOOOOOOOD'
+)
+
 Admission.create(
   program_id: program1.id,
   student_id: student1.id
+)
+
+Admission.create(
+  program_id: program1.id,
+  student_id: student2.id
 )
