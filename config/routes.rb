@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   post '/login', to: 'session#create'
   get '/logout', to: 'session#destroy'
 
+
+  #test json
   get '/api', to: 'api#index'
 
   

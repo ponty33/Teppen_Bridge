@@ -9,7 +9,7 @@ class Assignment extends React.Component{
   
   componentDidMount() {
     // console.log('ffff', session['user_id'])
-    fetch('/parents/1/assignments')
+    fetch(`/parents/1/assignments`)
     .then((response) => {
         return response.json();
     })
