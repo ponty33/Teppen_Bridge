@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post '/parents', to: 'parents#create'
 
   get '/login', to: 'session#new'
+  get '/session_info', to: 'session#show'
   post '/login', to: 'session#create'
   get '/logout', to: 'session#destroy'
 
