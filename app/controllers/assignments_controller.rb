@@ -3,11 +3,11 @@ require 'json'
 class AssignmentsController < ApplicationController
   
   def index
-    @assignment = Parent.joins(:students).all
-    
+    student = Student.find_by(parent_id: params[:parent_id])
+    assignments = AssignmentPerformance.where(:student_id => student.id)
     puts "DATA PASSING"
 
-    render json: @assignment
+    render json: assignments
    
   end
 

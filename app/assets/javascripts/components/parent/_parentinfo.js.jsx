@@ -8,7 +8,22 @@ class Parentinfo extends React.Component{
     };
     this.updateState = this.updateState.bind(this);
   }
-
+  componentDidMount() {
+    // console.log('ffff', session['user_id'])
+    fetch(`/session_info`)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+      console.log("Data incoming...");
+      console.log("data is " ,data);
+      this.setState({
+        page: this.state.page,
+        user_id: JSON.parse(data)
+      });
+      //console.log("after setting state ",this.state.assignment);
+    })
+  }
   updateState(state) {
     this.setState ({
       page: state,
@@ -16,28 +31,28 @@ class Parentinfo extends React.Component{
     });
   }
   
-
+  
   
   render() {
     
     let childComponent = "";
     if (this.state.page === 'profile') {
-      childComponent = <Profile />
+      childComponent = <Profile parent_id={this.state.user_id}/>
     } else if (this.state.page === 'new_enrollment') {
-      childComponent = <Newenrollment />
+      childComponent = <Newenrollment parent_id={this.state.user_id}/>
     } else if (this.state.page === 'current_enrollment') {
-      childComponent = <Admission />
+      childComponent = <Admission parent_id={this.state.user_id}/>
     } else if (this.state.page === 'reviews') {
-      childComponent = <Review />
+      childComponent = <Review parent_id={this.state.user_id}/>
     } else if (this.state.page === 'assignments') {
-      childComponent = <Assignment />
+      childComponent = <Assignment parent_id={this.state.user_id}/>
     } else if (this.state.page === 'reports') {
-      childComponent = <Report />
+      childComponent = <Report parent_id={this.state.user_id}/>
     } 
     return(
       <div>
         <Navbar />
-        <Parenttab updateState = {this.updateState}/>
+        <Parenttab  updateState = {this.updateState}/>
         {childComponent}
       </div>
     )}

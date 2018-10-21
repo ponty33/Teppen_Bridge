@@ -25,7 +25,7 @@ class SessionController < ApplicationController
   end
   
   def show
-    # puts "SHOW #{session[:user_id]}"
+    puts "SHOW #{session[:user_id]}"
   
     render json: session[:user_id]
   end
