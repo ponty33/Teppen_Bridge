@@ -1,11 +1,11 @@
 class SessionController < ApplicationController
   
   def new
-    puts 'NEWWWWWWWWWWWWWWWWWWW'
+    puts 'In LOGIN'
   end
   
   def create
-    puts 'CREEEEEEEEEEEEEEEEEEEEEEEEEAte'
+    puts 'CREATE NEW SESSION'
     parent = Parent.find_by_email(params[:email])
     # If the user exists AND the password entered is correct.
       parent = authenticate_with_credentials(params[:email], params[:password])
@@ -25,8 +25,6 @@ class SessionController < ApplicationController
   end
   
   def show
-    puts "SHOW #{session[:user_id]}"
-  
     render json: session[:user_id]
   end
 
@@ -41,7 +39,7 @@ class SessionController < ApplicationController
     parent = Parent.find_by(email: nemail, password: password)
     
     parent ? parent : nil
-    puts "NAMEEEEEEEEEEEEEEEEEEEEEE #{parent.name}" 
+   
     parent
   end
 

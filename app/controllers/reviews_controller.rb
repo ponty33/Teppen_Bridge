@@ -12,7 +12,15 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    redirect_to 
+    @review = Review.create(
+      teacher_id: params[:teacher_id],
+      content: params[:content],
+      rating: params[:rating],
+      parent_id: params[:parent_id],
+      subject_id: params[:subject_id]
+    )
+
+    redirect_to '/parents'
   end
 
 end

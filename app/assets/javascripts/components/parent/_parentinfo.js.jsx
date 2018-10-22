@@ -9,19 +9,17 @@ class Parentinfo extends React.Component{
     this.updateState = this.updateState.bind(this);
   }
   componentDidMount() {
-    // console.log('ffff', session['user_id'])
     fetch(`/session_info`)
     .then((response) => {
         return response.json();
     })
     .then((data) => {
       console.log("Data incoming...");
-      console.log("data is " ,data);
+      console.log("Parent ID is: " ,data);
       this.setState({
         page: this.state.page,
         user_id: JSON.parse(data)
       });
-      //console.log("after setting state ",this.state.assignment);
     })
   }
   updateState(state) {

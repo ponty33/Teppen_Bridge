@@ -11,21 +11,20 @@ Rails.application.routes.draw do
   end
   
   #Admin pages
-  # resources :admins do
-    # resources :admin-reports
-    # resources :teachers
-    # resources :subjects
-    # resources :manage-programs
-  # end
+  namespace :admin do
+    resources :reports, only: [:index]
+    resources :teachers, only: [:index, :create]
+    resources :subjects, only: [:index, :create]
+    resources :programs, only: [:index, :create]
+  end
   
   #Teacher pages
-  # resources :teachers do
-    # resources :profiles
-    # resources :student-assignments
-    # resources :make-assignments
-    # resources :programs
-    # resources :parent-reviews
-  # end
+  resources :teachers, only: [:index, :show] do
+    resources :profiles, only: [:index, :update]
+    resources :assignments, only: [:index, :update, :new]
+    resources :programs, only: [:index]
+    resources :reviews, only: [:index]
+  end
 
   get '/register', to: 'parents#new'
   post '/parents', to: 'parents#create'
@@ -37,7 +36,7 @@ Rails.application.routes.draw do
 
 
   #test json
-  get '/api', to: 'api#index'
+  # get '/api', to: 'api#index'
 
   
 end
