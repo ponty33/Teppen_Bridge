@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
+  #Parent pages
   resources :parents, only: [:index, :show] do
     resources :admissions, only: [:index, :new, :create]
     resources :reviews, only: [:new, :create]
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
     resources :reports, only: [:index]
   end
   # resources :admins
+  #Teacher pages
   # resources :teachers
 
   get '/register', to: 'parents#new'
