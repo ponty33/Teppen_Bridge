@@ -36,7 +36,6 @@ class Review extends React.Component{
     return(
       <div>
         <h1>Let us know what you think!</h1>
-        {/* NEED solution================================== */}
         <form action={`/parents/${this.props.parent_id}/reviews`} method='post'>
           <div>
             <span>Teacher: </span>

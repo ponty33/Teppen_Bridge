@@ -14,6 +14,9 @@ class SessionController < ApplicationController
     # byebug
     if parent != nil
       session[:user_id] = parent.id
+      session[:user_type] = "parent"
+
+      byebug
       # redirect_to '/session_info'
 
       redirect_to "/parents/#{session[:user_id]}"
