@@ -14,11 +14,30 @@ class Home extends React.Component {
   }
   render() {
     return (
-      <div className="header">
-        <div>react svg line chart [part 1]</div>
-        <br />
-        <LineChart data={this.createFakeData()} />
+      // <div className="container">
+      //   {/* <div>react svg line chart [part 1]</div> */}
+      //   <br />
+      //   <div className="container1">
+      //     <div className="vertical_label">
+      //       <h1>Vertical!</h1>
+      //     </div>
+      //     <div className="graph_container">
+      //       <div className="graph"><LineChart data={this.createFakeData()} /></div>
+      //     </div>
+      //   </div>
+      //   <div className="bottom_label">bottom</div>
+      // </div>
+
+
+
+      <div className="flex-container">
+        <div className="left_graph">left</div>
+        <div className="graph_container">center <LineChart data={this.createFakeData()} /></div>
+        <div>right</div>
       </div>
+
+
+
     );
   }
 }

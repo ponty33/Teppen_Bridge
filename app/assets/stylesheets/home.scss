@@ -19,3 +19,36 @@
   margin-left: 20em;
   margin-right: 20em
 }
+
+.vertical_label{
+  float:left;
+}
+
+.container1 {
+  display: flex; /* or inline-flex */
+  flex-direction: row;
+  height: 14em;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  // background-color: DodgerBlue;
+}
+
+.graph_container {
+  width: 50em;
+  height: auto;
+  // display: flex; /* or inline-flex */
+  flex-direction: column;
+}
+
+.graph {
+  height: 14em;
+}
+
+.left_graph{
+  margin-left: 20px;
+  margin-top: 50px;
+  writing-mode:vertical-lr;   
+}

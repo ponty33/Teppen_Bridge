@@ -55,28 +55,28 @@ class LineChart extends React.Component {
         );
     }
 
-    makeLabels() {
-        const { svgHeight, svgWidth, xLabelSize, yLabelSize } = this.props;
-        const padding = 5;
-        return (
-            <g className="linechart_label">
-                {/* Y AXIS LABELS */}
-                <text transform={`translate(${yLabelSize / 2}, 20)`} textAnchor="middle">
-                    {this.getY().max.toLocaleString('us-EN', { style: 'currency', currency: 'USD' })}
-                </text>
-                <text transform={`translate(${yLabelSize / 2}, ${svgHeight - xLabelSize - padding})`} textAnchor="middle">
-                    {this.getY().min.toLocaleString('us-EN', { style: 'currency', currency: 'USD' })}
-                </text>
-                {/* X AXIS LABELS */}
-                <text transform={`translate(${yLabelSize}, ${svgHeight})`} textAnchor="start">
-                    {this.props.data[0].d}
-                </text>
-                <text transform={`translate(${svgWidth}, ${svgHeight})`} textAnchor="end">
-                    {this.props.data[this.props.data.length - 1].d}
-                </text>
-            </g>
-        )
-    }
+    // makeLabels() {
+    //     const { svgHeight, svgWidth, xLabelSize, yLabelSize } = this.props;
+    //     const padding = 5;
+    //     return (
+    //         <g className="linechart_label">
+    //             {/* Y AXIS LABELS */}
+    //             <text transform={`translate(${yLabelSize / 2}, 20)`} textAnchor="middle">
+    //                 {this.getY().max.toLocaleString('us-EN', { style: 'currency', currency: 'USD' })}
+    //             </text>
+    //             <text transform={`translate(${yLabelSize / 2}, ${svgHeight - xLabelSize - padding})`} textAnchor="middle">
+    //                 {this.getY().min.toLocaleString('us-EN', { style: 'currency', currency: 'USD' })}
+    //             </text>
+    //             {/* X AXIS LABELS */}
+    //             <text transform={`translate(${yLabelSize}, ${svgHeight})`} textAnchor="start">
+    //                 {this.props.data[0].d}
+    //             </text>
+    //             <text transform={`translate(${svgWidth}, ${svgHeight})`} textAnchor="end">
+    //                 {this.props.data[this.props.data.length - 1].d}
+    //             </text>
+    //         </g>
+    //     )
+    // }
 
 
 
@@ -86,7 +86,7 @@ class LineChart extends React.Component {
             <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
                 {this.makePath()}
                 {this.makeAxis()}
-                {this.makeLabels()}
+                {/* {this.makeLabels()} */}
             </svg>
         );
     }
@@ -94,7 +94,7 @@ class LineChart extends React.Component {
 LineChart.defaultProps = {
     data: [],
     color: '#2196F3',
-    svgHeight: 200,
+    svgHeight: 100,
     svgWidth: 200
 }
 // export default LineChart;
