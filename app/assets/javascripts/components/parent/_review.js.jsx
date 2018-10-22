@@ -3,7 +3,9 @@ class Review extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      num: [1,2,3]
+      teacher: [],
+      subject: [],
+      rating: [1, 2, 3, 4, 5]
     };
     this.num = this.num.bind(this);
   }
@@ -13,6 +15,19 @@ class Review extends React.Component{
     this.setState({selected: e.target.value});
    }
 
+  componentDidMount() {
+    fetch(`/parents/${this.props.parent_id}/reviews/new`)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+      console.log("Data incoming...");
+      this.setState({ teacher: data[0], subject: data[1] })
+      console.log("after setting state ");
+    })
+  }
+  
+
   render() {
     return(
       <div>
@@ -21,16 +36,24 @@ class Review extends React.Component{
           <div>
             <span>Teacher: </span>
             <select name="select" onChange={this.num}>
-              {this.state.num.map(function(n) { 
-                return (<option value={n}>{n}</option>);
+              {this.state.teacher.map(function(n) { 
+                return (<option value={n.id} key={n.id} >{n.name}</option>);
               })}
             </select>
           </div>
           <div>
             <span>Subject: </span>
             <select name="select" onChange={this.num}>
-              {this.state.num.map(function(n) { 
-                return (<option value={n}>{n}</option>);
+              {this.state.subject.map(function(sub) { 
+                return (<option value={sub.id} key={sub.id}>{sub.name}</option>);
+              })}
+            </select>
+          </div>
+          <div>
+            <span>Rating: </span>
+            <select name="select" onChange={this.num}>
+              {this.state.rating.map(function(n) { 
+                return (<option value={n} key={n}>{n}</option>);
               })}
             </select>
           </div>

@@ -9,9 +9,23 @@ Rails.application.routes.draw do
     resources :assignments, only: [:index]
     resources :reports, only: [:index]
   end
-  # resources :admins
+  
+  #Admin pages
+  # resources :admins do
+    # resources :admin-reports
+    # resources :teachers
+    # resources :subjects
+    # resources :manage-programs
+  # end
+  
   #Teacher pages
-  # resources :teachers
+  # resources :teachers do
+    # resources :profiles
+    # resources :student-assignments
+    # resources :make-assignments
+    # resources :programs
+    # resources :parent-reviews
+  # end
 
   get '/register', to: 'parents#new'
   post '/parents', to: 'parents#create'
