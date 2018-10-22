@@ -1,5 +1,6 @@
 // import React, {Component} from "react"
 // import "./LineChart.css"
+// whatever
 class LineChart extends React.Component {
     // GET MAX & MIN X
     getMinX() {
