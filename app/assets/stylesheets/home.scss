@@ -37,3 +37,18 @@
   border: 1px solid #ccc;
   border-top: none;
 }
+.linechart_path {
+  stroke-width: 3;
+  fill: none;
+}
+
+.linechart_axis {
+  stroke: #bdc3c7;
+}
+
+.linechart{
+  width:300px;
+  height:300px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
