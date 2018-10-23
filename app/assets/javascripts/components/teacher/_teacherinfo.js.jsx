@@ -42,8 +42,8 @@ class Teacherinfo extends React.Component{
       childComponent = <Tprofile teacher_id={this.state.user_id}/>
     } else if (this.state.page === 'assignments') {
       childComponent = <Tassignment teacher_id={this.state.user_id}/>
-    } else if (this.state.page === 'subjects') {
-      childComponent = <Tsubject teacher_id={this.state.user_id}/>
+    } else if (this.state.page === 'programs') {
+      childComponent = <Tprogram teacher_id={this.state.user_id}/>
     } else if (this.state.page === 'reviews') {
       childComponent = <Treview teacher_id={this.state.user_id}/>
     } 

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   #Teacher pages
   resources :teachers, only: [:index, :show] do
     resources :profiles, only: [:index, :update]
-    resources :assignments, only: [:index, :update, :new]
+    resources :assignments, only: [:index, :update, :create]
     resources :programs, only: [:index]
     resources :reviews, only: [:index]
   end

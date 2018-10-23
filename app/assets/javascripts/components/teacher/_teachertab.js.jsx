@@ -7,7 +7,7 @@ const Teachertab = (props) => {
     <div className="tab">
       <button value='profile' className="tablinks" onClick={onclickhandler}>Profile</button>
       <button value='assignments' className="tablinks" onClick={onclickhandler}>Assignment</button>
-      <button value='subjects' className="tablinks" onClick={onclickhandler}>Subject</button>
+      <button value='programs' className="tablinks" onClick={onclickhandler}>Program</button>
       <button value='reviews' className="tablinks" onClick={onclickhandler}>Reviews</button>
     </div>
   )

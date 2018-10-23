@@ -1,10 +1,9 @@
-class Tassignment extends React.Component{
+class Tprogram extends React.Component{
   
   constructor(props) {
     super(props);
     this.state = {
-      assignments: [],
-      subjects: []
+      programs: []
     };
 
   }

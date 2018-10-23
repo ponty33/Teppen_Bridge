@@ -25,6 +25,7 @@ class Assignment extends React.Component{
        <div key={assignment.id}>
         <p>=====================================</p>
         <h2>Assignment Name: {assignment.name}</h2>
+        <h2>Status: {assignment.status}</h2>
         <h2>Score: {assignment.score}</h2>
         <h2>Comment: {assignment.feedback}</h2>
         

@@ -16,7 +16,6 @@ class Treview extends React.Component{
     .then((data) => {
       console.log("Data incoming...");
       this.setState({ reviews: data })
-      console.log(this.state.reviews)
       console.log("after setting state ");
     })
   }

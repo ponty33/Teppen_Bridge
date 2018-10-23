@@ -20,8 +20,6 @@ end
 
 # Teachers
 
-Teacher.destroy_all
-
 puts "Creating Teachers ..."
 
 teacher1 = Teacher.create(
@@ -35,44 +33,75 @@ teacher1 = Teacher.create(
 teacher2 = Teacher.create(
   name:'Yang', 
   email:'yang@gmail.com', 
-  password:'456', 
+  password:'123', 
   hourly_wage: 2, 
   img_url:'www.ggdd'
 )
 
+teacher3 = Teacher.create(
+  name:'Frank', 
+  email:'frank@gmail.com', 
+  password:'123', 
+  hourly_wage: 3, 
+  img_url:'www.ggd'
+)
 
-Parent.destroy_all
+teacher4 = Teacher.create(
+  name:'Kanwal', 
+  email:'kanwal@gmail.com', 
+  password:'123', 
+  hourly_wage: 4, 
+  img_url:'www.dd'
+)
+
+
 puts "Creating Parents ..."
 
 parent1 = Parent.create(
-  name:'Ping',
+  name:'David Williams',
   email:'abc@gmail.com',
   password:'123'
 )
 
 parent2 = Parent.create(
-  name:'Gee',
+  name:'John Smith',
   email:'def@gmail.com',
   password: '123'
 )
 
-Student.destroy_all
+
+parent3 = Parent.create(
+  name:'Jenny Chang',
+  email:'aaa@gmail.com',
+  password: '123'
+)
+
 puts "Creating Students ..."
 
 student1 = parent1.students.create!({
-  name:'Gong',
+  name:'Joe Williams',
   age: 12
 })
 
 student2 = parent2.students.create!({
-  name:'Keee',
+  name:'Jensen Smith',
   age: 13
 })
 
-Subject.destroy_all
+student3 = parent3.students.create!({
+  name:'Carl Chang',
+  age: 13
+})
+
+
 puts "Creating Subjects ..."
 
-subject1 = Subject.create(name:'Computer', cost: 200)
+subject1 = Subject.create(name:'Math', cost: 200)
+subject2 = Subject.create(name:'Chemistry', cost: 195)
+subject3 = Subject.create(name:'Physics', cost: 190)
+subject4 = Subject.create(name:'Biology', cost: 180)
+
+
 
 puts "Creating Programs ..."
 
@@ -81,39 +110,63 @@ program1 = Program.create(
   teacher_id:teacher1.id, 
   start_date:20181101, 
   end_date:20190118
-  )
+)
+
+program2 = Program.create(
+  subject_id:subject2.id, 
+  teacher_id:teacher1.id, 
+  start_date:20181020, 
+  end_date:20181210
+)
+
+
+program3 = Program.create(
+  subject_id:subject3.id, 
+  teacher_id:teacher1.id, 
+  start_date:20181010, 
+  end_date:20181130
+)
 
 
 Review.create(
   teacher_id: teacher1.id,
-  content: 'GG',
+  content: "My son's grade improves significantly!",
   rating: 5,
   parent_id: parent1.id,
   subject_id: subject1.id
 )
 
+Review.create(
+  teacher_id: teacher1.id,
+  content: "I hope the lesson plan is more well designed.",
+  rating: 3,
+  parent_id: parent3.id,
+  subject_id: subject2.id
+)
+
+
 assignment1 = Assignment.create(
-  name:'Kick Ass',
-  content:'Kiss my Ass',
-  start_date: 20180223,
-  end_date: 20180228,
+  name:'Algebra practice',
+  content:'Math Priciple p.125: #1 - #20',
+  start_date: 20181101,
+  end_date: 20181107,
   program_id: program1.id 
 )
 
 assignment2 = Assignment.create(
-  name:'Damn Good',
-  content: 'Soooooo Gooood',
-  start_date: 20180305,
-  end_date: 20180403,
-  program_id: program1.id
+  name:'Redox practice',
+  content: 'Intor Chemisry p.213: #30 - #35',
+  start_date: 20181025,
+  end_date: 20181101,
+  program_id: program2.id
 )
 
 AssignmentPerformance.create(
   assignment_id: assignment1.id,
   student_id: student1.id,
-  status: 'Marked',
+  status: 'Not submitted',
   score: 0,
-  feedback: 'Go study'
+  feedback: ''
 )
 
 AssignmentPerformance.create(
@@ -121,7 +174,7 @@ AssignmentPerformance.create(
   student_id: student2.id,
   status: 'Marked',
   score: 100,
-  feedback: 'GOOOOOOOD'
+  feedback: 'Good job!'
 )
 
 Admission.create(
