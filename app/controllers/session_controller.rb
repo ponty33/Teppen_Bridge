@@ -14,7 +14,7 @@ class SessionController < ApplicationController
       # Save the user id inside the browser cookie. This is how we keep the user 
       # logged in when they navigate around our website.
     # byebug
-    if user.hourly_wage == nil
+    if user.has_attribute?(:hourly_wage) == false
       session[:user_id] = user.id
       session[:user_type] = "parent"
 
