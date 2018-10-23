@@ -1,5 +1,11 @@
 class ReviewsController < ApplicationController
-  
+
+  def index
+    reviews = Review.joins(:parent).joins(:subject).select('reviews.id, parents.name, content, rating').where(teacher_id: params[:teacher_id])
+
+    render json: reviews
+  end
+
   def new
     list = []
     teachers = Teacher.all
@@ -12,6 +18,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
+
     @review = Review.create(
       teacher_id: params[:teacher_id],
       content: params[:content],
@@ -21,6 +28,7 @@ class ReviewsController < ApplicationController
     )
 
     redirect_to '/parents'
+
   end
 
 end

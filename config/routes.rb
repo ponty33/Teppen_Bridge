@@ -17,11 +17,11 @@ Rails.application.routes.draw do
     resources :subjects, only: [:index, :create]
     resources :programs, only: [:index, :create]
   end
-  
+
   #Teacher pages
   resources :teachers, only: [:index, :show] do
     resources :profiles, only: [:index, :update]
-    resources :assignments, only: [:index, :update, :new]
+    resources :assignments, only: [:index, :update, :create]
     resources :programs, only: [:index]
     resources :reviews, only: [:index]
   end
@@ -33,10 +33,6 @@ Rails.application.routes.draw do
   get '/session_info', to: 'session#show'
   post '/login', to: 'session#create'
   get '/logout', to: 'session#destroy'
-
-
-  #test json
-  # get '/api', to: 'api#index'
 
   
 end
