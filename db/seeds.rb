@@ -115,7 +115,13 @@ AssignmentPerformance.create(
   score: 0,
   feedback: 'Go study'
 )
-
+AssignmentPerformance.create(
+  assignment_id: assignment2.id,
+  student_id: student1.id,
+  status: 'Marked',
+  score: 30,
+  feedback: 'Do good next time'
+)
 AssignmentPerformance.create(
   assignment_id: assignment2.id,
   student_id: student2.id,
