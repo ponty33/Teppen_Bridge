@@ -9,8 +9,8 @@ class AssignmentsController < ApplicationController
       puts "DATA PASSING"
 
       render json: assignments
-    else 
-      
+    elsif session[:user_type] == "teacher"
+      # tassignment = AssignmentPerformance
     end  
    
   end

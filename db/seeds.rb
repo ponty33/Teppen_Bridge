@@ -161,12 +161,20 @@ assignment2 = Assignment.create(
   program_id: program2.id
 )
 
+assignment3 = Assignment.create(
+  name:'Electron practice',
+  content: 'Intor Chemisry p.202: #30 - #35',
+  start_date: 20181020,
+  end_date: 20181130,
+  program_id: program2.id
+)
+
 AssignmentPerformance.create(
   assignment_id: assignment1.id,
   student_id: student1.id,
-  status: 'Not submitted',
-  score: 0,
-  feedback: ''
+  status: 'Marked',
+  score: 50,
+  feedback: 'GOOD'
 )
 
 AssignmentPerformance.create(
@@ -175,6 +183,14 @@ AssignmentPerformance.create(
   status: 'Marked',
   score: 100,
   feedback: 'Good job!'
+)
+
+AssignmentPerformance.create(
+  assignment_id: assignment3.id,
+  student_id: student1.id,
+  status: 'Marked',
+  score: 30,
+  feedback: 'Good!'
 )
 
 Admission.create(
