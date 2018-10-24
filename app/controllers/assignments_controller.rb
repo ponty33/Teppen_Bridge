@@ -10,7 +10,16 @@ class AssignmentsController < ApplicationController
 
       render json: assignments
     elsif session[:user_type] == "teacher"
-      # tassignment = AssignmentPerformance
+      result = []
+      programs = Program.where(:teacher_id => params[:teacher_id])
+      programs.each do |program|
+        tassignment = AssignmentPerformance.joins(:student).joins(:assignment).select("assignment_performances.id, student_id, assignment_id, students.name as student, assignments.name as assignment, status, assignments.program_id").where("assignments.program_id = #{program.id}")
+
+        
+
+        result.concat(tassignment)
+      end
+      render json: result
     end  
    
   end

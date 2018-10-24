@@ -12,10 +12,12 @@ Rails.application.routes.draw do
   
   #Admin pages
   namespace :admin do
+    root to: 'admin#index'
     resources :reports, only: [:index]
     resources :teachers, only: [:index, :create]
     resources :subjects, only: [:index, :create]
     resources :programs, only: [:index, :create]
+    resources :parents, only: [:index]
   end
 
   #Teacher pages
