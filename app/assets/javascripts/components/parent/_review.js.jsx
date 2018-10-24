@@ -5,9 +5,17 @@ class Review extends React.Component {
     this.state = {
       teacher: [],
       subject: [],
-      rating: [1, 2, 3, 4, 5]
+      rating: [1, 2, 3, 4, 5],
+      selectedTeacher: "Select Teacher",
+      selectedSubject: "Select Subject",
+      selectedRating: "1",
+      teacher_id: "1",
+      subject_id: "1",
     };
-    this.num = this.num.bind(this);
+
+    this.selectTeacher = this.selectTeacher.bind(this);
+    this.selectSubject = this.selectSubject.bind(this);
+    this.selectedRating = this.selectedRating.bind(this);
     this.submit = this.submit.bind(this);
   }
 
@@ -15,8 +23,44 @@ class Review extends React.Component {
     alert('Thank you for your feedback.');
   }
 
-  num(e) {
-    this.setState({ selected: e.target.value });
+  selectTeacher(e) {
+    console.log(e.target.getAttribute("data-name"));
+    this.setState({
+      teacher: this.state.teacher,
+      subject: this.state.subject,
+      rating: this.state.rating,
+      selectedTeacher: e.target.getAttribute("data-name"),
+      selectedSubject: this.state.selectedSubject,
+      selectedRating: this.state.selectedRating,
+      teacher_id: e.target.getAttribute("data-id"),
+      subject_id: this.state.subject_id,
+    });
+  }
+
+  selectSubject(e) {
+    console.log(e.target.getAttribute("data-name"));
+    this.setState({
+      teacher: this.state.teacher,
+      subject: this.state.subject,
+      rating: this.state.rating,
+      selectedTeacher: this.state.selectedTeacher,
+      selectedSubject: e.target.getAttribute("data-name"),
+      selectedRating: this.state.selectedRating,
+      teacher_id: this.state.teacher_id,
+      subject_id: e.target.getAttribute("data-id"),
+    });
+  }
+
+  selectedRating(e) {
+    console.log(e.target.getAttribute("data-name"));
+    this.setState({
+      teacher: this.state.teacher,
+      subject: this.state.subject,
+      rating: this.state.rating,
+      selectedTeacher: this.state.selectedTeacher,
+      selectedSubject: this.state.selectedSubject,
+      selectedRating: e.target.getAttribute("data-name"),
+    });
   }
 
   componentDidMount() {
@@ -26,14 +70,26 @@ class Review extends React.Component {
       })
       .then((data) => {
         console.log("Data incoming...");
-        this.setState({ teacher: data[0], subject: data[1] })
+        this.setState({ 
+          teacher: data[0], 
+          subject: data[1],
+          rating: this.state.rating,
+          selectedTeacher: this.state.selectedTeacher,
+          selectedSubject: this.state.selectedSubject,
+          selectedRating: this.state.selectedRating,
+          teacher_id: this.state.teacher_id,
+          subject_id: this.state.subject_id,
+        })
         console.log("after setting state ");
+        console.log(this.props.parent_id);
       })
   }
 
 
   render() {
+
     return (
+
       <div className="container">
         <br></br>
         <div className="jumbotron">
@@ -42,37 +98,71 @@ class Review extends React.Component {
           <img src={asset_paths.review} />
         </div>
 
-        <h1> form starts here</h1>
-
         <form action={`/parents/${this.props.parent_id}/reviews`} method='post'>
-          <div>
-            <span>Teacher: </span>
-            <select name="teacher_id" onChange={this.num}>
-              {this.state.teacher.map(function (n) {
-                return (<option value={n.id} key={n.id} >{n.name}</option>);
+
+          <input name="teacher_id" type="hidden" value={this.state.teacher_id} />
+          <input name="content" type="hidden" value={this.state.selectedSubject} />
+          <input name="rating" type="hidden" value={this.state.selectedRating} />
+          <input name="parent_id" type="hidden" value={this.props.parent_id} />
+          <input name="subject_id" type="hidden" value={this.state.subject_id} />
+
+          <div className="dropdown">
+
+            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {this.state.selectedTeacher}
+            </button>
+
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+              {this.state.teacher.map(n => {
+                console.log(n);
+                return (<a className="dropdown-item" data-name={n.name} data-id={n.id} value={n.id} key={n.id} onClick={this.selectTeacher}>{n.name}</a>);
               })}
-            </select>
+
+            </div>
+
           </div>
-          <div>
-            <span>Subject: </span>
-            <select name="subject_id" onChange={this.num}>
-              {this.state.subject.map(function (sub) {
-                return (<option value={sub.id} key={sub.id}>{sub.name}</option>);
+
+          <br /> 
+
+          <div className="dropdown">
+
+            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {this.state.selectedSubject}
+            </button>
+
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+              {this.state.subject.map(n => {
+                console.log(n);
+                return (<a className="dropdown-item" data-name={n.name} data-id={n.id} value={n.id} key={n.id} onClick={this.selectSubject}>{n.name}</a>);
               })}
-            </select>
+
+            </div>
+
           </div>
-          <div>
-            <span>Rating: </span>
-            <select name="rating" onChange={this.num}>
-              {this.state.rating.map(function (n) {
-                return (<option value={n} key={n}>{n}</option>);
+
+          <br /> 
+
+          <div className="dropdown">
+
+            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {this.state.selectedRating}
+            </button>
+
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+              {this.state.rating.map(n => {
+                return (<a className="dropdown-item" data-name={n} data-id={n} value={n} key={n} onClick={this.selectedRating}>{n}</a>);
               })}
-            </select>
+
+            </div>
+
           </div>
-          <div>
-            <textarea name="content" placeholder='What do you want to let us know?' />
-          </div>
-          <button type='submit' onClick={this.submit}>SUBMIT</button>
+
+          <br />
+          
+          <button type="submit" className="btn btn-primary">Submit</button>
         </form>
       </div>
     )

@@ -122,21 +122,8 @@ class Newenrollment extends React.Component {
 
             <div><button type="submit" className="btn btn-primary">Submit</button></div>
           </form>
-
-
         </div>
-
-
       </div>
-
-
-
-
-
-
-
-
-
 
     )
   }
