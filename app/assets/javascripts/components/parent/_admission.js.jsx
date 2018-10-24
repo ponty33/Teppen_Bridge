@@ -1,5 +1,5 @@
-class Admission extends React.Component{
-  
+class Admission extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -9,7 +9,7 @@ class Admission extends React.Component{
 
   componentDidMount() {
     fetch(`/parents/${this.props.parent_id}/admissions`)
-    .then((response) => {
+      .then((response) => {
         return response.json();
     })
     .then((data) => {
@@ -18,8 +18,8 @@ class Admission extends React.Component{
       console.log("after setting state ", data);
     })
   }
-  
-  
+
+
   render() {
     var admissions = this.state.admissions.map((admission) => {
       return(
@@ -32,13 +32,31 @@ class Admission extends React.Component{
 
        </div>
       )
-     })
-    
-    return(
-      <div>
-        <h1>Current Enrollment</h1>
-        {admissions}
+    })
+
+    return (
+      <div className="container">
+        <br></br>
+        <div className="jumbotron">
+          <h1>current enrollment</h1>
+          <br></br>
+          <img src={asset_paths.current_enrollment} />
+        </div>
+
+        <div className="currentEnrollment_container">
+          <div className="textLeft"><img src={asset_paths.enroll} /></div>
+          <div className="textRight">{admissions}</div>
+        </div>
+
+
       </div>
-    )}
+
+
+
+
+
+
+    )
+  }
 
 }

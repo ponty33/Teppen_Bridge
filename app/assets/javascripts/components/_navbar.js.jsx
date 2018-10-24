@@ -1,7 +1,7 @@
-class Navbar extends React.Component{
-  
-  
-  
+class Navbar extends React.Component {
+
+
+
   render() {
     return(
       <div>

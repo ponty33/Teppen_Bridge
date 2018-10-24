@@ -1,6 +1,7 @@
-class Parentinfo extends React.Component{
-  
+class Parentinfo extends React.Component {
+
   constructor(props) {
+    // window.paths = props.paths;
     super(props);
     this.state = {
       page: 'profile',
@@ -10,49 +11,50 @@ class Parentinfo extends React.Component{
   }
   componentDidMount() {
     fetch(`/session_info`)
-    .then((response) => {
+      .then((response) => {
         return response.json();
-    })
-    .then((data) => {
-      console.log("Data incoming...");
-      console.log("Parent ID is: " ,data);
-      this.setState({
-        page: this.state.page,
-        user_id: JSON.parse(data)
-      });
-    })
+      })
+      .then((data) => {
+        console.log("Data incoming...");
+        console.log("Parent ID is: ", data);
+        this.setState({
+          page: this.state.page,
+          user_id: JSON.parse(data)
+        });
+      })
   }
   updateState(state) {
-    this.setState ({
+    this.setState({
       page: state,
       user_id: this.state.user_id
     });
   }
-  
-  
-  
+
+
+
   render() {
-    
+
     let childComponent = "";
     if (this.state.page === 'profile') {
-      childComponent = <Profile parent_id={this.state.user_id}/>
+      childComponent = <Profile parent_id={this.state.user_id} />
     } else if (this.state.page === 'new_enrollment') {
-      childComponent = <Newenrollment parent_id={this.state.user_id}/>
+      childComponent = <Newenrollment parent_id={this.state.user_id} />
     } else if (this.state.page === 'current_enrollment') {
-      childComponent = <Admission parent_id={this.state.user_id}/>
+      childComponent = <Admission parent_id={this.state.user_id} />
     } else if (this.state.page === 'reviews') {
-      childComponent = <Review parent_id={this.state.user_id}/>
+      childComponent = <Review parent_id={this.state.user_id} />
     } else if (this.state.page === 'assignments') {
-      childComponent = <Assignment parent_id={this.state.user_id}/>
+      childComponent = <Assignment parent_id={this.state.user_id} />
     } else if (this.state.page === 'reports') {
-      childComponent = <Report parent_id={this.state.user_id}/>
-    } 
-    return(
+      childComponent = <Report parent_id={this.state.user_id} />
+    }
+    return (
       <div>
         <Navbar />
-        <Parenttab  updateState = {this.updateState}/>
+        <Parenttab updateState={this.updateState} />
         {childComponent}
       </div>
-    )}
+    )
+  }
 
 }
