@@ -26,20 +26,21 @@ class Newenrollment extends React.Component {
       selectedProgram: this.state.selectedProgram,
       programs: this.state.programs,
       students: this.state.students,
-      student_id: this.state.student_id,
+      student_id: e.target.getAttribute("data-id"),
       program_id: this.state.program_id,
     });
   }
 
   selectProgram(e) {
     console.log(e.target.getAttribute("data-val"));
+    console.log("hi",e.target.value);
     this.setState({
       selectedProgram: e.target.getAttribute("data-val"),
       selectedStudent: this.state.selectedStudent,
       programs: this.state.programs,
       students: this.state.students,
       student_id: this.state.student_id,
-      program_id: this.state.program_id,
+      program_id: e.target.getAttribute("data-id") 
     });
   }
   componentDidMount() {
@@ -82,7 +83,7 @@ class Newenrollment extends React.Component {
 
               {this.state.students.map(n => {
                 console.log(n);
-                return (<a className="dropdown-item" data-val={n.name} value={n.id} key={n.id} onClick={this.selectStudent}>{n.name}</a>);
+                return (<a className="dropdown-item" data-val={n.name} data-id={n.id} value={n.id} key={n.id} onClick={this.selectStudent}>{n.name}</a>);
               })}
 
             </div>
@@ -96,7 +97,7 @@ class Newenrollment extends React.Component {
 
               {this.state.programs.map(n => {
                 console.log(n);
-                return (<a className="dropdown-item" data-val={n.subject_name + " from " + n.start_date + " to " + n.end_date} value={n.id} key={n.id} onClick={this.selectProgram}>{n.subject_name} from {n.start_date} to {n.end_date}</a>);
+                return (<a className="dropdown-item" data-id={n.program_id} data-val={n.subject_name + " from " + n.start_date + " to " + n.end_date} value={n.program_id} key={n.id} onClick={this.selectProgram}>{n.subject_name} from {n.start_date} to {n.end_date}</a>);
               })}
 
             </div>
