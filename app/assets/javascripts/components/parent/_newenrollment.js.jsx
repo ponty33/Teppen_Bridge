@@ -73,8 +73,10 @@ class Newenrollment extends React.Component {
         </div>
 
         <form action={`/parents/${this.props.parent_id}/admissions`} method='post'>
+        
           <input name="student" type="hidden" value={this.state.student_id} />
           <input name="program" type="hidden" value={this.state.program_id} />
+
           <div className="dropdown">
             <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {this.state.selectedStudent}
@@ -89,6 +91,8 @@ class Newenrollment extends React.Component {
             </div>
           </div>
 
+          <br /> 
+          
           <div className="dropdown">
             <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {this.state.selectedProgram}
@@ -102,6 +106,8 @@ class Newenrollment extends React.Component {
 
             </div>
           </div>
+
+          <br /> 
 
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>

@@ -18,9 +18,6 @@ class AdmissionsController < ApplicationController
       
     end
    
-
-
-
     puts "DATA PASSING"
 
     render json: programs
