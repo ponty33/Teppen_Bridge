@@ -34,7 +34,7 @@ class Ateacher extends React.Component{
     
     return(
       <div>
-        <h1>Add New Teacher</h1>
+        <h2>Add New Teacher</h2>
         <form action='/admin/teachers' method='post'>
           <div>
             <input name='name' type='text' placeholder='Name' />

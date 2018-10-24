@@ -41,6 +41,8 @@ class Admin extends React.Component{
       childComponent = <Asubject />
     } else if (this.state.page === 'programs') {
       childComponent = <Aprogram />
+    } else if (this.state.page === 'parents') {
+      childComponent = <Aparent />
     } 
     return(
       <div>

@@ -3,7 +3,7 @@ class Admission extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      admission: []
+      admissions: []
     };
   }
 
@@ -14,20 +14,21 @@ class Admission extends React.Component{
     })
     .then((data) => {
       console.log("Data incoming...");
-      this.setState({ admission: data })
+      this.setState({ admissions: data })
       console.log("after setting state ", data);
     })
   }
   
   
   render() {
-    var admissions = this.state.admission.map((admission) => {
+    var admissions = this.state.admissions.map((admission) => {
       return(
-       <div key={admission.id}>
+       <div key={admission.program.id}>
         <p>=====================================</p>
-        <h2>Program subject: {admission.subject_name}</h2>
-        <h2>Start date: {admission.start_date}</h2>
-        <h2>End date: {admission.end_date}</h2>
+        <h2>Program subject: {admission.program.subject.name}</h2>
+        <h2>Student Name: {admission.student.name}</h2>
+        <h2>Start date: {admission.program.start_date}</h2>
+        <h2>End date: {admission.program.end_date}</h2>
 
        </div>
       )

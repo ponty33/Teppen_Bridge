@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :teachers, only: [:index, :create]
     resources :subjects, only: [:index, :create]
     resources :programs, only: [:index, :create]
+    resources :parents, only: [:index]
   end
 
   #Teacher pages
