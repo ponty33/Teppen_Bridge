@@ -15,13 +15,23 @@ class Report extends React.Component{
     return data;
   }
 
+  handleChartHover(hoverLoc, activePoint){
+    this.setState({
+      hoverLoc: hoverLoc,
+      activePoint: activePoint
+    })
+  }
+
   constructor(props) {
     super(props);
     this.state = {
       reportInfo: [{x:2,y:3},{x:5,y:8}],
-      numReports: ["Report_1"]
+      numReports: ["Report_1"],
+      hoverLoc: null,
+      activePoint: null
     };
   }
+
   
   componentDidMount() {
     console.log("In Component did mount");
@@ -40,15 +50,23 @@ class Report extends React.Component{
   
   
   render() {
-    console.log("in render");
     var reports = this.state.numReports.map((report) => {
       return(
-       <LineChart data={this.state.reportInfo}/>
+       <LineChart onChartHover={ (a,b) => this.handleChartHover(a,b) }  data={this.state.reportInfo}/>
       )
      })
-    return(
-      <div className="linechart">
-        {reports}
+     return (
+      <div className='container'>
+        <div className='row'>
+          {<div className='popup'>
+            {this.state.hoverLoc ? <ToolTip hoverLoc={this.state.hoverLoc} activePoint={this.state.activePoint}/> : null}
+          </div>}
+        </div>
+        <div className='row'>
+          <div  id="linechart" className='chart'>
+              {reports}
+          </div>
+        </div>
       </div>
      
     )}
