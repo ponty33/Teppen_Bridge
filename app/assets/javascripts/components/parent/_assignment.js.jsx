@@ -41,8 +41,9 @@ class Assignment extends React.Component {
         <br></br>
         <div className="container">
           <div className="jumbotron">
-            <h1>Assignment</h1>
-            <p>Student Assignments</p><img src={asset_paths.student} />
+            <h1>assignment</h1>
+            <br></br>
+            <img src={asset_paths.assignment} />
           </div>
           {assignments}
         </div>

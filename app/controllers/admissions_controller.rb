@@ -28,9 +28,39 @@ class AdmissionsController < ApplicationController
   end
 
   def new
+    
+    puts "DATA PASSING"
+
+    students = Student.where(parent_id: params[:parent_id])
+    prog = Program.all
+    programs = []
+    
+    prog.each do |program|
+
+      progInfo={}
+      progInfo[:start_date] = program.start_date
+      progInfo[:end_date] = program.end_date
+      progInfo[:subject_name] = Subject.find_by(id: program.subject_id).name
+      progInfo[:program_id] = program.id
+      programs.push(progInfo)
+      
+    end
+    newAdmInfo={programs: programs,students: students}
+    puts "DATA PASSING"
+
+    render json: newAdmInfo
+
   end
 
   def create
+
+    puts "Creating Admission"
+    @admission = Admission.create(
+      student_id: params[:student],
+      program_id: params[:program]
+    )
+
+    redirect_to '/parents'
   end
 
 end
