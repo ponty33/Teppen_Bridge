@@ -101,7 +101,6 @@ class Review extends React.Component {
         <form action={`/parents/${this.props.parent_id}/reviews`} method='post'>
 
           <input name="teacher_id" type="hidden" value={this.state.teacher_id} />
-          <input name="content" type="hidden" value={this.state.selectedSubject} />
           <input name="rating" type="hidden" value={this.state.selectedRating} />
           <input name="parent_id" type="hidden" value={this.props.parent_id} />
           <input name="subject_id" type="hidden" value={this.state.subject_id} />
@@ -158,6 +157,13 @@ class Review extends React.Component {
 
             </div>
 
+          </div>
+
+          <br />
+
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Review</label>
+            <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
 
           <br />
