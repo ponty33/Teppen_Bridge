@@ -8,5 +8,11 @@ class Admin::SubjectsController < ApplicationController
   end
 
   def create
+    Subject.create(
+      name: params[:name],
+      cost: params[:cost]
+    )
+
+    redirect_to '/admin'
   end
 end

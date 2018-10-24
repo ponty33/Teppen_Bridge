@@ -5,8 +5,13 @@ class Ateacher extends React.Component{
     this.state = {
       teachers: []
     };
+    this.click = this.click.bind(this)
   }
   
+  click(e) {
+    e.preventDefault()
+  }
+
   componentDidMount() {
     fetch(`/admin/teachers`)
     .then((response) => {

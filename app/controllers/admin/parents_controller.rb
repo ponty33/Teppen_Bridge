@@ -16,8 +16,6 @@ class Admin::ParentsController < ApplicationController
       
       result.concat(parent)
     end
-
-# byebug
     render json: result
   end
 end
