@@ -184,9 +184,9 @@ AssignmentPerformance.create(
 AssignmentPerformance.create(
   assignment_id: assignment2.id,
   student_id: student1.id,
-  status: 'Marked',
-  score: 30,
-  feedback: 'Do good next time'
+  status: 'Pending',
+  score: 0,
+  feedback: ''
 )
 AssignmentPerformance.create(
   assignment_id: assignment2.id,
@@ -199,9 +199,9 @@ AssignmentPerformance.create(
 AssignmentPerformance.create(
   assignment_id: assignment3.id,
   student_id: student1.id,
-  status: 'Marked',
-  score: 30,
-  feedback: 'Good!'
+  status: 'Not complete',
+  score: 0,
+  feedback: ''
 )
 
 Admission.create(
