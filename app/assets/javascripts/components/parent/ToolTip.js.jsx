@@ -13,8 +13,9 @@ class ToolTip extends React.Component {
 
     return (
       <div className='hover' style={ placementStyles }>
-        <div className='date'>{ activePoint.d }</div>
-        <div className='price'>{activePoint.p }</div>
+        <div className='date'>{`${activePoint.startDate} - ${activePoint.endDate}`}</div>
+        <div className='name'>{ activePoint.name }</div>
+        <div className='feedback'>{activePoint.feedback }</div>
       </div>
     )
   }

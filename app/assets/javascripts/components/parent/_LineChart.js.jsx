@@ -102,8 +102,10 @@ class LineChart extends React.Component {
       svgData.push({
         svgX: this.getSvgX(point.x),
         svgY: this.getSvgY(point.y),
-        d: "point.d",
-        p: "point.p"
+        name: point.name,
+        startDate: point.startDate,
+        endDate: point.endDate,
+        feedback: point.feedback
       });
     });
 
