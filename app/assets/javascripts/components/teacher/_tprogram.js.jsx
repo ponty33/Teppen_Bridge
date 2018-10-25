@@ -24,20 +24,25 @@ class Tprogram extends React.Component{
   render() {
     var programs = this.state.programs.map((program) => {
       return(
-       <div key={program.id}>
-        <p>=====================================</p>
+       <div className="teacherReview_box" key={program.id}>
         <h2>Subject: {program.name}</h2>
         <h2>Start Date: {program.start_date}</h2>
         <h2>End Date: {program.end_date}</h2>
-        
        </div>
       )
      })
     
     return(
-      <div>
-        <h1>Current programs in charge</h1>
+      <div className="container">
+        <br></br>
+        <div className="jumbotron">
+          <h1>Your current programs!</h1>
+          <br></br>
+          <img src={asset_paths.review} />
+        </div>
+
         {programs}
+
       </div>
     )}
 }
