@@ -2,6 +2,14 @@
 // import "./LineChart.css"
 // whatever
 class LineChart extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+          hoverLoc: null,
+          activePoint: null
+        }
+    }
     // GET MAX & MIN X
     getMinX() {
         const { data } = this.props;
@@ -83,15 +91,68 @@ class LineChart extends React.Component {
         )
     }
 
+    getCoords(e){
+    const {svgWidth, data, yLabelSize} = this.props;
+    const svgLocation = document.getElementsByClassName("svg_graph")[0].getBoundingClientRect();
+    const adjustment = (svgLocation.width - svgWidth) / 2; //takes padding into consideration
+    const relativeLoc = e.clientX - svgLocation.left - adjustment;
 
+    let svgData = [];
+    data.map((point, i) => {
+      svgData.push({
+        svgX: this.getSvgX(point.x),
+        svgY: this.getSvgY(point.y),
+        d: "point.d",
+        p: "point.p"
+      });
+    });
+
+    let closestPoint = {};
+    for(let i = 0, c = 500; i < svgData.length; i++){
+      if ( Math.abs(svgData[i].svgX - this.state.hoverLoc) <= c ){
+        c = Math.abs(svgData[i].svgX - this.state.hoverLoc);
+        closestPoint = svgData[i];
+      }
+    }
+
+    if(relativeLoc - yLabelSize < 0){
+      this.stopHover();
+    } else {
+      this.setState({
+        hoverLoc: relativeLoc,
+        activePoint: closestPoint
+      })
+      this.props.onChartHover(relativeLoc, closestPoint);
+    }
+  }
+  // STOP HOVER
+  stopHover(){
+    this.setState({hoverLoc: null, activePoint: null});
+    this.props.onChartHover(null, null);
+  }
+  // MAKE ACTIVE POINT
+  makeActivePoint(){
+    const {color, pointRadius} = this.props;
+    return (
+      <circle
+        className='linechart_point'
+        style={{stroke: color}}
+        r={pointRadius}
+        cx={this.state.activePoint.svgX}
+        cy={this.state.activePoint.svgY}
+      />
+    );
+  }
 
     render() {
         const { svgHeight, svgWidth } = this.props;
         return (
-            <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
+            <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`}   onMouseLeave={ () => this.stopHover()  } className={'svg_graph'}
+            onMouseMove={ (e) => this.getCoords(e) }>
                 {this.makePath()}
                 {this.makeAxis()}
                 {this.makeLabels()}
+                {this.state.hoverLoc ? this.makeActivePoint() : null}
             </svg>
         );
     }
@@ -100,6 +161,8 @@ LineChart.defaultProps = {
     data: [],
     color: '#2196F3',
     svgHeight: 200,
-    svgWidth: 200
+    svgWidth: 200,
+    color: '#2196F3',
+    pointRadius: 5,
 }
 // export default LineChart;

@@ -93,6 +93,11 @@ student3 = parent3.students.create!({
   age: 13
 })
 
+student4 = parent1.students.create!({
+  name:'Jack Chang',
+  age: 13
+})
+
 
 puts "Creating Subjects ..."
 
@@ -207,4 +212,9 @@ Admission.create(
 Admission.create(
   program_id: program1.id,
   student_id: student2.id
+)
+
+Admission.create(
+  program_id: program2.id,
+  student_id: student4.id
 )
