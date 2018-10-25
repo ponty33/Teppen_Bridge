@@ -19,20 +19,35 @@ class AdmissionsController < ApplicationController
     #   programs.push(progInfo)
       
     # end
-    students.each do |student|
-      program = Program.joins(:subject).joins(:admissions).select("programs.id, start_date, end_date, subject_id, subjects.name as subject, admissions.student_id").find_by("admissions.student_id = #{student.id}")
-      
-      student = Student.find_by("id = #{student.id}")
-
-      program = [:program => program, :student => student]
     
+    programs = []
+    students.each do |student|
+      admissions = student.admissions
+    
+    
+      admissions.each do |admission|
 
-      result.concat(program)
-    end
-
+        program = Program.find_by(:id => admission.program_id)
+        progInfo={}
+        progInfo[:start_date] = program.start_date
+        progInfo[:end_date] = program.end_date
+        progInfo[:student_name] = student.name
+        progInfo[:subject_name] = Subject.find_by(id: program.subject_id).name
+        programs.push(progInfo)
+      end
+      # puts "found student"
+      # programs = Program.joins(:subject).joins(:admissions).select("programs.id, start_date, end_date, subject_id,subjects.name as subject, admissions.student_id").find_by("admissions.student_id = #{student.id}")
+      # #result = result.concat(programs)
+      # programs.each do |program|
+      #   puts "found programs" 
+      #   students.push(student)
+      # end
+    #program = [:program => program
+  end
+    
     puts "DATA PASSING"
 
-    render json: result
+    render json: {programs: programs}
 
   end
 

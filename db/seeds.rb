@@ -26,32 +26,32 @@ teacher1 = Teacher.create(
   name:'Charles', 
   email:'charles@gmail.com', 
   password:'123', 
-  hourly_wage: 1, 
-  img_url:'www.gg'
+  hourly_wage: 25, 
+  img_url:'https://images.plurk.com/mx_3tOQeBIWwlkBRvnZVKFJ5l.jpg'
 )
 
 teacher2 = Teacher.create(
   name:'Yang', 
   email:'yang@gmail.com', 
   password:'123', 
-  hourly_wage: 2, 
-  img_url:'www.ggdd'
+  hourly_wage: 25, 
+  img_url:'https://images.plurk.com/mx_75VKOCwjZPitCPwrPdrA6o.jpg'
 )
 
 teacher3 = Teacher.create(
   name:'Frank', 
   email:'frank@gmail.com', 
   password:'123', 
-  hourly_wage: 3, 
-  img_url:'www.ggd'
+  hourly_wage: 20, 
+  img_url:'https://images.plurk.com/mx_3Dzh3FiUrc6vsCqtdUksSB.jpg'
 )
 
 teacher4 = Teacher.create(
   name:'Kanwal', 
   email:'kanwal@gmail.com', 
   password:'123', 
-  hourly_wage: 4, 
-  img_url:'www.dd'
+  hourly_wage: 45, 
+  img_url:'https://images.plurk.com/mx_2c9oCWaa4tU6hPo4SZ9eq7.jpg'
 )
 
 
