@@ -64,10 +64,14 @@ class AdmissionsController < ApplicationController
   def create
 
     puts "Creating Admission"
-    @admission = Admission.create(
-      student_id: params[:student],
-      program_id: params[:program]
-    )
+    admission = Admission.find_by(student_id: params[:student],program_id: params[:program])
+
+    if !admission 
+      @admission = Admission.create(
+        student_id: params[:student],
+        program_id: params[:program]
+      )
+    end
 
     redirect_to '/parents'
   end

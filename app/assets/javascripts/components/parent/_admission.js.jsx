@@ -22,15 +22,16 @@ class Admission extends React.Component {
 
   render() {
     var admissions = this.state.admissions.map((admission) => {
-      return(
-       <div key={admission.program.id}>
-        <p>=====================================</p>
-        <h2>Program subject: {admission.program.subject.name}</h2>
-        <h2>Student Name: {admission.student.name}</h2>
-        <h2>Start date: {admission.program.start_date}</h2>
-        <h2>End date: {admission.program.end_date}</h2>
-
-       </div>
+      return (
+        <div className="currentEnrollment_container">
+          <div className="textLeft"><img src={asset_paths.enroll} /></div>
+          <div key={admission.program.id}>
+            <h4>Program subject: {admission.program.subject.name}</h4>
+            <h4>Student name: {admission.student.name}</h4>
+            <h4>Start date: {admission.program.start_date}</h4>
+            <h4>End date: {admission.program.end_date}</h4>
+          </div>
+        </div>
       )
     })
 
@@ -38,24 +39,12 @@ class Admission extends React.Component {
       <div className="container">
         <br></br>
         <div className="jumbotron">
-          <h1>current enrollment</h1>
+          <h1>current enrollments</h1>
           <br></br>
           <img src={asset_paths.current_enrollment} />
         </div>
-
-        <div className="currentEnrollment_container">
-          <div className="textLeft"><img src={asset_paths.enroll} /></div>
-          <div className="textRight">{admissions}</div>
-        </div>
-
-
+        <div className="textRight">{admissions}</div>
       </div>
-
-
-
-
-
-
     )
   }
 
