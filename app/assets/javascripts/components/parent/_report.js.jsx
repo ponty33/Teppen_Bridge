@@ -9,7 +9,7 @@ class Report extends React.Component{
       console.log("score is ",assignments[x].score);
       let y = Number(assignments[x].score) 
       const temp = data.length > 0 ? data[data.length - 1].y : 50;
-      data.push({ x, y })
+      data.push({ x, y, score: x, name: assignments[x].assignment, startDate: assignments[x].start_date,endDate: assignments[x].end_date,feedback: assignments[x].feedback  })
     }
     console.log("data is ",data);
     return data;
