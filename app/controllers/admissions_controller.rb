@@ -57,7 +57,7 @@ class AdmissionsController < ApplicationController
     if !admission 
       @admission = Admission.create(
         student_id: params[:student],
-        program_id: params[:program]
+        program_id: params[:program],
       )
     end
 
