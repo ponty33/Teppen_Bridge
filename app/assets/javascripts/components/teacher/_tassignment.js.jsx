@@ -62,7 +62,7 @@ class Tassignment extends React.Component{
       let score = this.state.editable ? <input type='text' ref={input => this.score = input} defaultValue={assignment.score}/>:<h3>{assignment.score}</h3>  
       return(
           <div key={assignment.id}>
-           <Tassignmentper handleUpdate ={this.handleUpdate}/>
+           <Tassignmentper assignment={assignment} handleUpdate ={this.handleUpdate}/>
           </div>
         )
     })

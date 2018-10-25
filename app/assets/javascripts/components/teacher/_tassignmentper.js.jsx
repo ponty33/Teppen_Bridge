@@ -23,7 +23,7 @@ class Tassignmentper extends React.Component{
   }  
 
   render() {
- 
+    let assignment = this.props.assignment
     let status = this.state.editable ? <input type='text' ref={input => this.status = input} defaultValue={assignment.status}/>:<h3>{assignment.status}</h3>
     let score = this.state.editable ? <input type='text' ref={input => this.score = input} defaultValue={assignment.score}/>:<h3>{assignment.score}</h3>  
     return(
