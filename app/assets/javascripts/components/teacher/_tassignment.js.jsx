@@ -3,10 +3,45 @@ class Tassignment extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      assignments: []
-    };
-
+      assignments: [],
+      assignmentper: []
+    }
   }
+
+  // handleEdit(){
+  //   if(this.state.editable){
+  //     let status = this.status.value
+  //     let score = this.score.value
+  //     let id = assignment.id
+  //     let assignment = {id: id, status: status, score: score}
+  //     console.log(assignment)
+  //     handleUpdate(assignment)
+  //   }
+  //   this.setState({
+  //     editable: !this.state.editable
+  //   })
+  // }
+
+  handleUpdate(assignemntper){
+  //   fetch(`http://localhost:3000/api/v1/fruits/${assignmentper.id}`, 
+  //   {
+  //     method: 'PUT',
+  //     body: JSON.stringify({assignemntper: assignemntper}),
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   }).then((response) => { 
+  //       this.updateStatus(assignemntper)
+  //     })
+  }
+
+  // updateStatus(assignemntper){
+  //   let newAssignments = this.state.assignments.filter((a) => a.id !== assignemntper.id)
+  //   newAssignments.push(assignemntper)
+  //   this.setState({
+  //     assignments: newAssignments
+  //   })
+  // }
 
   componentDidMount() {
     fetch(`/teachers/${this.props.teacher_id}/assignments/`)
@@ -23,13 +58,11 @@ class Tassignment extends React.Component{
 
   render() {
     var assignments = this.state.assignments.map((assignment) => {
-        return(
+      let status = this.state.editable ? <input type='text' ref={input => this.status = input} defaultValue={assignment.status}/>:<h3>{assignment.status}</h3>
+      let score = this.state.editable ? <input type='text' ref={input => this.score = input} defaultValue={assignment.score}/>:<h3>{assignment.score}</h3>  
+      return(
           <div key={assignment.id}>
-           <p>=====================================</p>
-           <h2>Assignment Name: {assignment.assignment.name}</h2>
-           <h2>Student Name: {assignment.student.name}</h2>
-           <h2>Status: {assignment.status}</h2>
-           <h2>Due Date: {assignment.assignment.end_date}</h2>
+           <Tassignmentper handleUpdate ={this.handleUpdate}/>
           </div>
         )
     })
@@ -41,3 +74,10 @@ class Tassignment extends React.Component{
       </div>
     )}
 }
+
+// t.string "name"
+// t.text "content"
+// t.date "start_date"
+// t.date "end_date"
+// t.integer "program_id"
+

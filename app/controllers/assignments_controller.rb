@@ -13,7 +13,7 @@ class AssignmentsController < ApplicationController
       result = []
       programs = Program.where(:teacher_id => params[:teacher_id])
       programs.each do |program|
-        tassignment = AssignmentPerformance.joins(:student).joins(:assignment).select("assignment_performances.id, student_id, assignment_id, students.name as student, assignments.name as assignment, status, assignments.program_id").where("assignments.program_id = #{program.id}")
+        tassignment = AssignmentPerformance.joins(:student).joins(:assignment).select("assignment_performances.id, student_id, assignment_id, students.name as student, assignments.name as assignment, status, score, assignments.program_id").where("assignments.program_id = #{program.id}")
 
         
 
@@ -29,7 +29,15 @@ class AssignmentsController < ApplicationController
   end
 
   def update
+    assignment = AssignmentPerformance.find(params[:id])
+    assignment.update_attributes(assignment_params)
+    render json: assignment
+  end
 
+  private
+
+  def assignment_params
+    params.require(:assignment_performance).permit(:assignment_id, :student_id, :status, :score, :feedback)
   end
 
 end
