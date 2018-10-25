@@ -43,18 +43,21 @@
 }
 
 .linechart_axis {
-  stroke: #bdc3c7;
+  stroke: black;
+  stroke-width: 10px;
 }
+
 .linechart_point {
   fill: #fff;
   stroke-width: 2;
 }
+
 #linechart{
-  width:300px;
-  height:300px;
+  width: 400px;
+  height:400px;
   margin-left: 50px;
   margin-right: 50px;
-  background-color: greenyellow
+  background-color: lightblue
 }
 .popup {
   min-height: 50px;
@@ -70,6 +73,7 @@
   border-radius: 4px;
   background-color: #2196F3;
   color: white;
+  width: fit-content;
 }
 .popup {
   min-height: 50px;
