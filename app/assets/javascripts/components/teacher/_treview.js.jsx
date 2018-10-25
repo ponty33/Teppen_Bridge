@@ -24,20 +24,27 @@ class Treview extends React.Component{
   render() {
     var reviews = this.state.reviews.map((review) => {
       return(
-       <div key={review.id}>
-        <p>=====================================</p>
+
+       <div className="teacherReview_box" key={review.id}>
         <h2>Parent Name: {review.name}</h2>
         <h2>Score: {review.content}</h2>
         <h2>Rating: {review.rating}</h2>
-        
        </div>
+
       )
      })
     
     return(
-      <div>
-        <h1>Reviews</h1>
+      <div className="container">
+        <br></br>
+        <div className="jumbotron">
+          <h1>Your feedback from our parents!</h1>
+          <br></br>
+          <img className="teacher_image"src={asset_paths.yang} />
+        </div>
+
         {reviews}
+        
       </div>
     )}
 }
