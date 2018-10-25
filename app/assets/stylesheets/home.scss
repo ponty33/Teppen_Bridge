@@ -52,3 +52,32 @@
   margin-left: 50px;
   margin-right: 50px;
 }
+#container {
+  min-height:100%;
+  position:relative;
+  height:100%;
+}
+#footer{
+  background-color:#E9E7DA;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+ }
+ *:before,
+ *:after {
+  box-sizing: border-box;
+ }
+
+
+ html,
+body {
+ height: 100%;
+ position: relative;
+}
+
+
+

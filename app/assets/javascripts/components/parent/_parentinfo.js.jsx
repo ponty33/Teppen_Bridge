@@ -49,11 +49,17 @@ class Parentinfo extends React.Component {
       childComponent = <Report parent_id={this.state.user_id} />
     }
     return (
-      <div>
-        <Navbar />
+      <div id="container">
+
+        <header>
+          <Navbar />
+        </header>
         <Parenttab updateState={this.updateState} />
         {childComponent}
+
+
       </div>
+
     )
   }
 

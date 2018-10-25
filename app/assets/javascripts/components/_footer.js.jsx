@@ -1,10 +1,13 @@
-class Footer extends React.Component{
-  
-  
-  
+class Footer extends React.Component {
+
+
+
   render() {
-    return(
-      <nav>ASS KICK</nav>
-    )}
+    return (
+      <div id="footer">
+        <div id="main_nav_logo"><img src={asset_paths.teppen_bridge} /></div>
+      </div>
+    )
+  }
 
 }
