@@ -174,6 +174,51 @@ assignment3 = Assignment.create(
   program_id: program2.id
 )
 
+assignment4 = Assignment.create(
+  name:'React practice',
+  content: 'Intor Chemisry p.207: #39 - #89',
+  start_date: 20181121,
+  end_date: 20181230,
+  program_id: program2.id
+)
+
+assignment5 = Assignment.create(
+  name:'Rails practice',
+  content: 'Intor Chemisry p.207: #39 - #89',
+  start_date: 20191121,
+  end_date: 20191230,
+  program_id: program2.id
+)
+
+assignment6 = Assignment.create(
+  name:'Java practice',
+  content: 'Intor Chemisry p.207: #39 - #89',
+  start_date: 20191021,
+  end_date: 20191130,
+  program_id: program2.id
+)
+AssignmentPerformance.create(
+  assignment_id: assignment4.id,
+  student_id: student1.id,
+  status: 'Marked',
+  score: 90,
+  feedback: 'Excellent '
+)
+AssignmentPerformance.create(
+  assignment_id: assignment5.id,
+  student_id: student1.id,
+  status: 'Marked',
+  score: 50,
+  feedback: 'GOOD'
+)
+
+AssignmentPerformance.create(
+  assignment_id: assignment6.id,
+  student_id: student1.id,
+  status: 'Marked',
+  score: 70,
+  feedback: 'GOOD'
+)
 AssignmentPerformance.create(
   assignment_id: assignment1.id,
   student_id: student1.id,

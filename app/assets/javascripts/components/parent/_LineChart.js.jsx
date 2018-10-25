@@ -164,8 +164,8 @@ class LineChart extends React.Component {
 LineChart.defaultProps = {
     data: [],
     color: '#2196F3',
-    svgHeight: 200,
-    svgWidth: 200,
+    svgHeight: 500,
+    svgWidth: 1000,
     color: '#2196F3',
     pointRadius: 5,
 }

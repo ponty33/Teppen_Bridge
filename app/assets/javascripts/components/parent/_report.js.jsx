@@ -62,11 +62,17 @@ class Report extends React.Component {
         <br></br>
         <div id="report">
           <span ><h1>report</h1></span><span><img src={asset_paths.chart} /></span>
-
         </div>
 
+
         <div className="graph-container">
-          <div>100%</div>
+
+          <div className="y_label_container">
+            <div>100%</div>
+            <div className="zero_label">0</div>
+          </div>
+
+
           <div className='row'>
             <div className='popup'>
               {this.state.hoverLoc ? <ToolTip hoverLoc={this.state.hoverLoc} activePoint={this.state.activePoint} /> : null}
@@ -80,11 +86,9 @@ class Report extends React.Component {
             </div>
           </div>
 
-
-
-
+          <div></div>
         </div>
-        <div>0</div>
+
       </div>
 
     )
