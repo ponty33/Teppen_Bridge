@@ -4,11 +4,18 @@ class AssignmentsController < ApplicationController
   
   def index
     if session[:user_type] == "parent"
-      student = Student.find_by(parent_id: params[:parent_id])
-      assignments = AssignmentPerformance.select("*").joins(:assignment).where(:student_id => student.id)
+      students = Student.where(:parent_id => params[:parent_id])
+      studentsAssignments = []
+      students.each do |student|
+        assignments = AssignmentPerformance.select("*").joins(:assignment).where(:student_id => student.id)
+        studentInfo ={assignments: assignments,
+              student: student.name}
+        studentsAssignments.push(studentInfo)
+      end
+      
       puts "DATA PASSING"
 
-      render json: assignments
+      render json: studentsAssignments
     elsif session[:user_type] == "teacher"
       result = []
       programs = Program.where(:teacher_id => params[:teacher_id])

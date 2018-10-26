@@ -197,6 +197,25 @@ assignment6 = Assignment.create(
   end_date: 20191130,
   program_id: program2.id
 )
+
+AssignmentPerformance.create(
+  assignment_id: assignment4.id,
+  student_id: student4.id,
+  status: 'Marked',
+  score: 40,
+  feedback: 'Excellent '
+)
+
+
+AssignmentPerformance.create(
+  assignment_id: assignment5.id,
+  student_id: student4.id,
+  status: 'Marked',
+  score: 60,
+  feedback: 'GOOD'
+)
+
+
 AssignmentPerformance.create(
   assignment_id: assignment4.id,
   student_id: student1.id,
