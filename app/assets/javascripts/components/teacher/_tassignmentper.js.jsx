@@ -36,11 +36,11 @@ class Tassignmentper extends React.Component{
             <input type="text" name='status' className="form-control" id="InputStatus" aria-describedby="emailHelp" placeholder="Enter status"/>
           </div>
           <div className="form-group">
-            <label htmlFor="InputScore">Status</label>
+            <label htmlFor="InputScore">Score</label>
             <input type="text" name='score' className="form-control" id="InputScore" aria-describedby="emailHelp" placeholder="Enter score"/>
           </div>
           <div className="form-group">
-            <label htmlFor="InputFeedback">Status</label>
+            <label htmlFor="InputFeedback">Feedback</label>
             <input type="text" name='feedback' className="form-control" id="InputFeedback" aria-describedby="emailHelp" placeholder="Enter feedback"/>
           </div>
           <button type="submit" className="btn btn-primary" onClick={() => this.handleEdit()}>Update</button>

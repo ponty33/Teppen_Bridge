@@ -68,40 +68,43 @@ class Report extends React.Component {
     // this.state.reports.forEach((report,i)=>{
     //   if(i==1)
     //   return
-    let i = 0;
-    let reports = this.state.reports.map((studentReport,i) => {
-      i++
-      return (
-        <div className="graph-container" key={i}>
-          <div >
-            {` Report of student ${studentReport.student}`}
-          </div>
 
-          <div className="y_label_container">
-            <div>100%</div>
-            <div className="zero_label">0</div>
-          </div>
-
-          <div className='row'>
-            <div className='popup'>
-              {this.state.hoverLoc[i] ? <ToolTip hoverLoc={this.state.hoverLoc[i]} activePoint={this.state.activePoint[i]} /> : null}
+      let reports = this.state.reports.map((studentReport,i) => {
+      
+        return (
+          <div className="graph-container">
+              <div >
+              {` Report of student ${studentReport.student}`}
             </div>
-          </div>
-
-          <div className='row'>
-            <div id="linechart" className='chart'>
-              <LineChart onChartHover={(a, b) => this.handleChartHover(i, a, b)} data={this.createChartData(studentReport.assignments, studentReport.student)} />
+            <div className="y_label_container">
+              <div>100%</div>
+              <div className="zero_label">0</div>
             </div>
-          </div>
-        </div>
-      )
+  
+  
+            <div className='row'>
+              <div className='popup'>
+                {this.state.hoverLoc[i] ? <ToolTip hoverLoc={this.state.hoverLoc[i]} activePoint={this.state.activePoint[i]} /> : null}
+              </div>
+            </div>
+  
+  
+            <div className='row'>
+              <div id="linechart" className='chart'>
+                <LineChart onChartHover={(a, b) => this.handleChartHover(i, a, b)} data={this.createChartData(studentReport.assignments, studentReport.student)} />
+              </div>
+            </div>
+  
+          
+          </div>)
+
     })
 
     //allReports = allReports.concat(reports);
     
 
     // });
-    console.log("allReports length",reports.length);
+     console.log("allReports length",reports.length);
     return (
       <div className='container'>
         <br></br>
@@ -114,12 +117,3 @@ class Report extends React.Component {
   }
 
 }
-
-
-
-
-
-
-
-
-

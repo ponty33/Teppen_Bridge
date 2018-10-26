@@ -25,35 +25,18 @@ class Assignment extends React.Component {
     this.state.assignments.forEach((element, i) => {
       let studentAssignments = element.assignments.map((assignment) => {
         return (
-          <div className="assignment_box">
-            <p>
-              <div key={assignment.id}>
-                <h2>Student :{element.student}</h2>
-                <h2>Assignment Name: {assignment.name}</h2>
-                <h2>Score: {assignment.score}</h2>
-                <h2>Comment: {assignment.feedback}</h2>
-              </div>
-            </p>
-          </div>
-        )
-      })
-      assignments = assignments.concat(studentAssignments);
-
-    });
-    {/*
-    var assignments = this.state.assignment.map((assignment) => {
-      return (
-        <div className="assignment_box"  key={assignment.id}>
-          <div>
+          <div className="assignment_box" key={assignment.id}>
             <div>
+              <h2>Student :{element.student}</h2>
               <h2>Assignment Name: {assignment.name}</h2>
               <h2>Score: {assignment.score}</h2>
               <h2>Comment: {assignment.feedback}</h2>
             </div>
           </div>
-        </div>
-      )
-    })*/}
+        )
+      })
+      assignments = assignments.concat(studentAssignments);
+    });
 
     return (
       <div>
