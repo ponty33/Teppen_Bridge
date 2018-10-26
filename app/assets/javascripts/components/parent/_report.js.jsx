@@ -73,7 +73,9 @@ class Report extends React.Component {
       
         return (
           <div className="graph-container">
-  
+              <div >
+              {` Report of student ${studentReport.student}`}
+            </div>
             <div className="y_label_container">
               <div>100%</div>
               <div className="zero_label">0</div>
@@ -93,7 +95,7 @@ class Report extends React.Component {
               </div>
             </div>
   
-            <div></div>
+          
           </div>)
 
     })
