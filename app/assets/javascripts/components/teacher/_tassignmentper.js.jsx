@@ -31,19 +31,19 @@ class Tassignmentper extends React.Component{
         <h2>Feedback: {assignment.feedback}</h2>
         <hr />
         <form action={`/teachers/${this.props.teacher_id}/assignments/${assignment.id}`} method='POST' >
-          <div class="form-group">
-            <label htmlfor="InputStatus">Status</label>
-            <input type="text" name='status' class="form-control" id="InputStatus" aria-describedby="emailHelp" placeholder="Enter status"/>
+          <div className="form-group">
+            <label htmlFor="InputStatus">Status</label>
+            <input type="text" name='status' className="form-control" id="InputStatus" aria-describedby="emailHelp" placeholder="Enter status"/>
           </div>
-          <div class="form-group">
-            <label htmlfor="InputScore">Status</label>
-            <input type="text" name='score' class="form-control" id="InputScore" aria-describedby="emailHelp" placeholder="Enter score"/>
+          <div className="form-group">
+            <label htmlFor="InputScore">Status</label>
+            <input type="text" name='score' className="form-control" id="InputScore" aria-describedby="emailHelp" placeholder="Enter score"/>
           </div>
-          <div class="form-group">
-            <label htmlfor="InputFeedback">Status</label>
-            <input type="text" name='feedback' class="form-control" id="InputFeedback" aria-describedby="emailHelp" placeholder="Enter feedback"/>
+          <div className="form-group">
+            <label htmlFor="InputFeedback">Status</label>
+            <input type="text" name='feedback' className="form-control" id="InputFeedback" aria-describedby="emailHelp" placeholder="Enter feedback"/>
           </div>
-          <button type="submit" class="btn btn-primary" onClick={() => this.handleEdit()}>Update</button>
+          <button type="submit" className="btn btn-primary" onClick={() => this.handleEdit()}>Update</button>
         </form>
         <hr />
         <h2>Due Date: {assignment.assignment.end_date}</h2>

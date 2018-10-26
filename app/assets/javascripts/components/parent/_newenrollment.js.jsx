@@ -113,8 +113,12 @@ class Newenrollment extends React.Component {
               <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
                 {this.state.programs.map(n => {
-                  console.log(n);
-                  return (<a className="dropdown-item" data-id={n.program_id} data-val={n.subject_name + " from " + n.start_date + " to " + n.end_date} value={n.program_id} key={n.id} onClick={this.selectProgram}>{n.subject_name} from {n.start_date} to {n.end_date}</a>);
+                  // console.log(n);
+                  return (
+                    <div key={n.program_id}>
+                      <a className="dropdown-item" data-id={n.program_id} data-val={n.subject_name + " from " + n.start_date + " to " + n.end_date} value={n.program_id} key={n.id} onClick={this.selectProgram}>{n.subject_name} from {n.start_date} to {n.end_date}</a>
+                    </div>
+                  );
                 })}
               </div>
             </div>

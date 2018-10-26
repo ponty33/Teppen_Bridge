@@ -28,7 +28,9 @@ class AdmissionsController < ApplicationController
       admissions.each do |admission|
 
         program = Program.find_by(:id => admission.program_id)
+        admission = Admission.find_by(:student_id => student.id, :program_id => program.id)
         progInfo={}
+        progInfo[:id] = admission.id
         progInfo[:start_date] = program.start_date
         progInfo[:end_date] = program.end_date
         progInfo[:student_name] = student.name

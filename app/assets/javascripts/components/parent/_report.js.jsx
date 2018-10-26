@@ -52,9 +52,13 @@ class Report extends React.Component {
 
 
   render() {
+    var i = 1;
     var reports = this.state.numReports.map((report) => {
+      i++
       return (
-        <LineChart onChartHover={(a, b) => this.handleChartHover(a, b)} data={this.state.reportInfo} />
+        <div key={i}>
+          <LineChart onChartHover={(a, b) => this.handleChartHover(a, b)} data={this.state.reportInfo} />
+        </div>
       )
     })
     return (

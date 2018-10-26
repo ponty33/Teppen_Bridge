@@ -24,14 +24,14 @@ class Assignment extends React.Component {
   render() {
     var assignments = this.state.assignment.map((assignment) => {
       return (
-        <div className="assignment_box">
-          <p>
-            <div key={assignment.id}>
+        <div className="assignment_box"  key={assignment.id}>
+          <div>
+            <div>
               <h2>Assignment Name: {assignment.name}</h2>
               <h2>Score: {assignment.score}</h2>
               <h2>Comment: {assignment.feedback}</h2>
             </div>
-          </p>
+          </div>
         </div>
       )
     })

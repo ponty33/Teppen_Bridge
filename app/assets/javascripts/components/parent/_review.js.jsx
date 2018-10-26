@@ -161,9 +161,9 @@ class Review extends React.Component {
 
           <br />
 
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Review</label>
-            <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <div className="form-group">
+            <label htmlFor="exampleFormControlTextarea1">Review</label>
+            <textarea name="content" className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
 
           <br />

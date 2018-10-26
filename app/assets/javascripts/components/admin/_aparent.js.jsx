@@ -23,7 +23,9 @@ class Aparent extends React.Component{
     var parents = this.state.parents.map((parent) => {
       var students = parent.student.map((stud) => {
         return(
-          <h2>{stud.name}</h2>
+          <div key={stud.id}>
+            <h2>{stud.name}</h2>
+          </div>
         )
       })
       
