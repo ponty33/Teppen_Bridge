@@ -30,7 +30,7 @@ class Aparent extends React.Component {
       })
 
       return (
-        <div className="admin_parents_box" key={parent.parent.id}>
+        <div className="jumbotron" key={parent.parent.id}>
           <div>
             <div><span><h2 id="testing">Name:</h2></span><span><h2>{parent.parent.name}</h2></span></div>
             <h2>E-mail: {parent.parent.email}</h2>

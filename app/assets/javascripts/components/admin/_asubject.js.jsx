@@ -24,8 +24,7 @@ class Asubject extends React.Component{
       return(
 
 
-        <div key={subject.id}>
-          <p>=====================================</p>
+        <div className="jumbotron" key={subject.id}>
           <h2>Subject: {subject.name}</h2>
           <h2>Price: {subject.cost}</h2>
         </div>
@@ -34,16 +33,28 @@ class Asubject extends React.Component{
      })
     
     return(
-      <div>
-        <h2>Add New Subject</h2>
-        <form action='/admin/subjects' method='post'>
-          <div>
-            <input name='name' type='text' placeholder='Name' />
+      <div className="container">
+        <br></br>
+        <div className="jumbotron">
+          <h1>subjects</h1>
+          <br></br>
+          <img src={asset_paths.family} />
+        </div>
+
+        <h1>Add New Subject</h1>
+        <form className="jumbotron" action='/admin/subjects' method='post'>
+
+          <div className="form-group">
+            <label htmlFor="exampleFormControlTextarea1">Subject name:</label>
+            <textarea name="name" type='text' placeholder='Subject name' className="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
           </div>
-          <div>
-            <input name='cost' type='text' placeholder='Cost' />
+
+          <div className="form-group">
+            <label htmlFor="exampleFormControlTextarea1">Subject cost:</label>
+            <textarea name="cost" type='text' placeholder='Subject cost' className="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
           </div>
-          <button type='submit'>ADD</button>
+
+          <div><button type="submit" className="btn btn-primary">Add</button></div>
         </form>
         <div>
           <h1>Current subjects</h1>

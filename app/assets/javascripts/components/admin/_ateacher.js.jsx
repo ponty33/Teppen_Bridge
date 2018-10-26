@@ -27,8 +27,7 @@ class Ateacher extends React.Component{
   render() {
     var teachers = this.state.teachers.map((teacher) => {
       return(
-       <div key={teacher.id}>
-        <p>=====================================</p>
+       <div className="jumbotron" key={teacher.id}>
         <h2>Teacher Name: {teacher.name}</h2>
         <h2>E-mail: {teacher.email}</h2>
         <h2>Hourly wage: {teacher.hourly_wage}</h2>
@@ -38,19 +37,33 @@ class Ateacher extends React.Component{
      })
     
     return(
-      <div>
-        <h2>Add New Teacher</h2>
-        <form action='/admin/teachers' method='post'>
-          <div>
-            <input name='name' type='text' placeholder='Name' />
+      <div className="container">
+        <br></br>
+        <div className="jumbotron">
+          <h1>teachers</h1>
+          <br></br>
+          <img src={asset_paths.family} />
+        </div>
+
+        <h1>Add New Teacher</h1>
+        <form className="jumbotron" action='/admin/teachers' method='post'>
+
+          <div className="form-group">
+            <label htmlFor="exampleFormControlTextarea1">Teacher name:</label>
+            <textarea name="name" type='text' placeholder='Teacher name' className="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
           </div>
-          <div>
-            <input name='email' type='email' placeholder='Email' />
+
+          <div className="form-group">
+            <label htmlFor="exampleFormControlTextarea1">Teacher email:</label>
+            <textarea name="email" type='text' placeholder='Teacher email' className="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
           </div>
-          <div>
-            <input name='password' type='password' placeholder='password' />
+
+          <div className="form-group">
+            <label htmlFor="exampleFormControlTextarea1">Teacher password:</label>
+            <textarea name="password" type='text' placeholder='Teacher password' className="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
           </div>
-          <button type='submit'>ADD</button>
+
+          <div><button type="submit" className="btn btn-primary">Add</button></div>
         </form>
       
         <div>
