@@ -31,7 +31,7 @@ class Ateacher extends React.Component{
         <h2>Teacher Name: {teacher.name}</h2>
         <h2>E-mail: {teacher.email}</h2>
         <h2>Hourly wage: {teacher.hourly_wage}</h2>
-
+        <h2>Average rating: {teacher.avg_rating}</h2>
        </div>
       )
      })
