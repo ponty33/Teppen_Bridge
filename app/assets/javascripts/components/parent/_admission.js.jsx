@@ -13,20 +13,20 @@ class Admission extends React.Component {
         return response.json();
       })
       .then((data) => {
-        console.log("Data incoming...", data);
+        console.log("Data incoming...");
         this.setState({ admissions: data })
-        console.log("after setting state ", data);
+        console.log("after setting state ");
       })
   }
 
 
   render() {
     var admissions = ""
-    admissions = this.state.admissions.programs.map((admission, i) => {
+    admissions = this.state.admissions.programs.map((admission) => {
       return (
-        <div className="currentEnrollment_container">
+        <div className="currentEnrollment_container" key={admission.id}>
           <div className="textLeft"><img src={asset_paths.enroll} /></div>
-          <div key={admission.id}>
+          <div>
             <h4>Program subject: {admission.subject_name}</h4>
             <h4>Student name: {admission.student_name}</h4>
             <h4>Start date: {admission.start_date}</h4>

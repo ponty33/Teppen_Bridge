@@ -117,12 +117,3 @@ class Report extends React.Component {
   }
 
 }
-
-
-
-
-
-
-
-
-
