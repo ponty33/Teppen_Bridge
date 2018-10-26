@@ -5,7 +5,7 @@ class Assignment extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      assignment: []
+      assignments: []
     };
   }
 
@@ -15,13 +15,32 @@ class Assignment extends React.Component {
         return response.json();
       })
       .then((data) => {
-        console.log("Data incoming...");
-        this.setState({ assignment: data })
-        console.log("after setting state ", this.state.assignment);
+        console.log("Data incoming...", data);
+        this.setState({ assignments: data })
       })
   }
 
   render() {
+    let assignments = [];
+    this.state.assignments.forEach((element, i) => {
+      let studentAssignments = element.assignments.map((assignment) => {
+        return (
+          <div className="assignment_box">
+            <p>
+              <div key={assignment.id}>
+                <h2>Student :{element.student}</h2>
+                <h2>Assignment Name: {assignment.name}</h2>
+                <h2>Score: {assignment.score}</h2>
+                <h2>Comment: {assignment.feedback}</h2>
+              </div>
+            </p>
+          </div>
+        )
+      })
+      assignments = assignments.concat(studentAssignments);
+
+    });
+    {/*
     var assignments = this.state.assignment.map((assignment) => {
       return (
         <div className="assignment_box">
@@ -34,7 +53,7 @@ class Assignment extends React.Component {
           </p>
         </div>
       )
-    })
+    })*/}
 
     return (
       <div>
