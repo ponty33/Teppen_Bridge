@@ -9,7 +9,7 @@
 }
 
 .jumbotron {
-    background-color: #EAB126; 
+    background-color: #EEE2DC; 
     border-style: solid;
     border-width: 6px;
 }
@@ -31,11 +31,22 @@ h2 {
     margin-top: 5px;
 }
 
+.admin_parents_box {
+    border-style: solid;
+    border-width: 3px;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+
 p {
     margin-top: 10px;
     margin-left: 10px;
 }
 
-
+#title{
+    color: red;
+}
 
 
