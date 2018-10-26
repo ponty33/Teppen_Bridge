@@ -3,12 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #tab {
-    border-color: grey;
+    border-color: black;
     border-style: solid;
     border-width: 3.5px;
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
-
 }
 
 
@@ -34,3 +33,26 @@
     
 }
 
+
+
+#tab_admin {
+    border-color: black;
+    border-style: solid;
+    border-width: 3.5px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: white;
+}
+
+
+#admin_tabs{
+    background-color: #BAB2B5;
+    border-color: black;
+    border-width: 4px;
+    border-bottom-style: solid;
+}
+
+#testing {
+    display: inline-block;
+    color: blue;
+}
