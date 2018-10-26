@@ -17,10 +17,12 @@ class Report extends React.Component {
 
   handleChartHover(i, hoverLoc, activePoint) {
     this.state.hoverLoc[i] = hoverLoc;
-    this.stat
+    this.state.activePoint[i] = activePoint;
+    
     this.setState({
-      hoverLoc: hoverLoc,
-      activePoint: activePoint
+      reports: this.state.reports,
+      hoverLoc: this.state.hoverLoc,
+      activePoint: this.state.activePoint
     })
   }
 
@@ -43,9 +45,16 @@ class Report extends React.Component {
       })
       .then((data) => {
         console.log("Data incoming...", data);
+        let hoverLoc = []
+        let activePoint = []
+        data.forEach(element => {
+          hoverLoc.push(0);
+          activePoint.push({});
+        });
         this.setState({
           reports: data,
-          numReports: [1]
+          hoverLoc,
+          activePoint
         })
         console.log("after setting state ", this.state.reportInfo);
       })
@@ -54,33 +63,46 @@ class Report extends React.Component {
 
 
   render() {
-    var reports = this.state.reports.assignments.map((report, i) => {
-      return (
-        <div className="graph-container">
 
-          <div className="y_label_container">
-            <div>100%</div>
-            <div className="zero_label">0</div>
-          </div>
+    //let allReports = []
+    // this.state.reports.forEach((report,i)=>{
+    //   if(i==1)
+    //   return
 
-
-          <div className='row'>
-            <div className='popup'>
-              {this.state.hoverLoc ? <ToolTip hoverLoc={this.state.hoverLoc[i]} activePoint={this.state.activePoint[i]} /> : null}
+      let reports = this.state.reports.map((studentReport,i) => {
+      
+        return (
+          <div className="graph-container">
+  
+            <div className="y_label_container">
+              <div>100%</div>
+              <div className="zero_label">0</div>
             </div>
-          </div>
-
-
-          <div className='row'>
-            <div id="linechart" className='chart'>
-              <LineChart onChartHover={(a, b) => this.handleChartHover(i, a, b)} data={this.createChartData(report, this.state.reports[i].student)} />
+  
+  
+            <div className='row'>
+              <div className='popup'>
+                {this.state.hoverLoc[i] ? <ToolTip hoverLoc={this.state.hoverLoc[i]} activePoint={this.state.activePoint[i]} /> : null}
+              </div>
             </div>
-          </div>
+  
+  
+            <div className='row'>
+              <div id="linechart" className='chart'>
+                <LineChart onChartHover={(a, b) => this.handleChartHover(i, a, b)} data={this.createChartData(studentReport.assignments, studentReport.student)} />
+              </div>
+            </div>
+  
+            <div></div>
+          </div>)
 
-          <div></div>
-        </div>)
+    })
 
-    });
+    //allReports = allReports.concat(reports);
+    
+
+    // });
+     console.log("allReports length",reports.length);
     return (
       <div className='container'>
         <br></br>

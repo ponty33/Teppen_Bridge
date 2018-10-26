@@ -151,7 +151,7 @@ class LineChart extends React.Component {
     render() {
         const { svgHeight, svgWidth } = this.props;
         return (
-            <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} onMouseLeave={() => this.stopHover()} className={'svg_graph'}
+            <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} onMouseLeave={() => this.stopHover()} className='svg_graph'
                 onMouseMove={(e) => this.getCoords(e)}>
                 {this.makePath()}
                 {this.makeAxis()}
