@@ -29,15 +29,19 @@ class AssignmentsController < ApplicationController
   end
 
   def update
+    puts "UPDATE STATUS" 
+    # assignment = [params[:id], params[:status], params[:score]]
+    # p assignment
     assignment = AssignmentPerformance.find(params[:id])
     assignment.update_attributes(assignment_params)
-    render json: assignment
+    # render json: assignment
+    redirect_to '/teachers' 
   end
 
   private
 
   def assignment_params
-    params.require(:assignment_performance).permit(:assignment_id, :student_id, :status, :score, :feedback)
+    params.permit(:status, :score)
   end
 
 end

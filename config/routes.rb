@@ -35,6 +35,6 @@ Rails.application.routes.draw do
   get '/session_info', to: 'session#show'
   post '/login', to: 'session#create'
   get '/logout', to: 'session#destroy'
-
+  post '/teachers/:teacher_id/assignments/:id', to: 'assignments#update'
   
 end
