@@ -24,7 +24,8 @@ class Home extends React.Component{
   render() {
     var style = {
       display: 'flex',
-      justifyContent: 'space-evenly'
+      justifyContent: 'space-evenly',
+      paddingTop: '2em'
     };
 
     var imgStyle = {
