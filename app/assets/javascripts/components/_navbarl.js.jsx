@@ -1,4 +1,4 @@
-class Navbar extends React.Component {
+class Navbarl extends React.Component {
 
 
 
@@ -33,7 +33,6 @@ class Navbar extends React.Component {
         </div>
           <h1 style={textStyle}>Education – Your Bridge To The Future.</h1>
         <div style={style}>
-          <Loginb user_id={this.props.user_id}/>
           <form action='/admin' method='get'style={buttonStyle}>
             <button type='submit' className="btn btn-secondary">ADMIN</button>
           </form>
