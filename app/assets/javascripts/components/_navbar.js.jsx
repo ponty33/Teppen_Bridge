@@ -15,10 +15,14 @@ class Navbar extends React.Component {
     };
 
     var textStyle = {
-      paddingTop: '1em',
+      paddingTop: '1.5em',
       textAlign: 'center',
-      fontSize: '3.1em'
+      fontSize: '2.5em'
     };
+
+    var buttonStyle = {
+      padding: '1em'
+    }
     
     return (
       <div id="main_nav" style={boxStyle}>
@@ -29,11 +33,11 @@ class Navbar extends React.Component {
         </div>
           <h1 style={textStyle}>Education – Your Bridge To The Future.</h1>
         <div style={style}>
-            <form action='/login' method='get'>
-              <button type='submit'>LOGIN</button>
+            <form action='/login' method='get' style={buttonStyle}>
+              <button type="submit" className="btn btn-primary">LOGIN</button>
             </form>
-            <form action='/admin' method='get'>
-              <button type='submit'>ADMIN</button>
+            <form action='/admin' method='get'style={buttonStyle}>
+              <button type='submit' className="btn btn-secondary">ADMIN</button>
             </form>
           </div>
       </div>

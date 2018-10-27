@@ -5,25 +5,45 @@ class Footer extends React.Component {
   render() {
     var boxStyle = {
       display: 'flex',
-      justifyContent: 'space-between'
+      justifyContent: 'center'
     }
     
     var style = {
-      float: 'right',
-      paddingRight: '2em',
-      paddingTop: '1em'
+      maxWidth: '18em'
     };
 
-    var textStyle = {
-      paddingTop: '1em',
-      textAlign: 'center',
-      fontSize: '3.1em'
-    };
+    var contactBox = {
+      paddingRight: '2em',
+      paddingTop: '2em',
+      paddingLeft: '2em'
+    }
+
 
     return (
       <div id="main_nav" style={boxStyle}>
-        <div id="main_nav_logo">
+        {/* <div id="main_nav_logo">
           <img src={asset_paths.teppen_bridge} />
+        </div> */}
+         <div style={contactBox}>
+          <div className="card border-secondary mb-3" style={style}>
+            <div className="card-header">Contact us</div>
+            <div className="card-body text-secondary">
+              <p className="card-text">
+                <li>Tel: 1-800-TEPPEN</li>
+                <li>E-mail: support@teppen.com</li>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div style={contactBox}>
+          <div className="card border-secondary mb-3" style={style}>
+            <div className="card-header">Address</div>
+            <div className="card-body text-secondary">
+              <p className="card-text">
+                <li>401 W Georgia St, Vancouver, Canada V6B 5A1</li>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     )

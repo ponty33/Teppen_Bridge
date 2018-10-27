@@ -3,11 +3,15 @@ class Login extends React.Component{
   
   
   render() {
+    var style = {
+      paddingTop: '1em'
+    };
+    
     return(
       <div>
          <Navbar />
  
-      <div className="container">
+      <div className="container" style={style}>
        
         <div className="jumbotron">
         

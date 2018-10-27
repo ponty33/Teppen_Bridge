@@ -33,7 +33,7 @@ class Home extends React.Component{
     }
 
     var cardStyle = {
-      maxWidth: "18rem"
+      maxWidth: "14rem"
     }
 
     var teaName = {
