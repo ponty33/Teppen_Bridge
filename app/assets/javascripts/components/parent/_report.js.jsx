@@ -77,7 +77,7 @@ class Report extends React.Component {
           <br></br>
           <br></br>
           <div id="chart_title">
-            {` Report of student: ${studentReport.student}`}
+            {` Assignments Report: ${studentReport.student}`}
           </div>
           <div className="graph-container">
 

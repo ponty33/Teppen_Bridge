@@ -70,8 +70,8 @@ class Review extends React.Component {
       })
       .then((data) => {
         console.log("Data incoming...");
-        this.setState({ 
-          teacher: data[0], 
+        this.setState({
+          teacher: data[0],
           subject: data[1],
           rating: this.state.rating,
           selectedTeacher: this.state.selectedTeacher,
@@ -106,7 +106,7 @@ class Review extends React.Component {
           <input name="subject_id" type="hidden" value={this.state.subject_id} />
 
           <div className="dropdown">
-
+            <div><h5 id="new_enroll_fonts">Please select the teacher:</h5></div>
             <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {this.state.selectedTeacher}
             </button>
@@ -122,10 +122,10 @@ class Review extends React.Component {
 
           </div>
 
-          <br /> 
+          <br />
 
           <div className="dropdown">
-
+            <div><h5 id="new_enroll_fonts">Please select the subject:</h5></div>
             <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {this.state.selectedSubject}
             </button>
@@ -141,10 +141,10 @@ class Review extends React.Component {
 
           </div>
 
-          <br /> 
+          <br />
 
           <div className="dropdown">
-
+            <div><h5 id="new_enroll_fonts">Rate the teacher:</h5></div>
             <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {this.state.selectedRating}
             </button>
@@ -167,7 +167,7 @@ class Review extends React.Component {
           </div>
 
           <br />
-          
+
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>
       </div>
