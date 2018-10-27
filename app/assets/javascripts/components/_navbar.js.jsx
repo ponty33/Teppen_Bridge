@@ -21,16 +21,6 @@ class Navbar extends React.Component {
     };
     
     return (
-<<<<<<< HEAD
-      <div id="main_nav">
-        <div id="main_nav_logo"><img src={asset_paths.teppen_bridge} /></div>
-        <form action='/login' method='get'>
-          <div><button type="submit" className="btn btn-primary">Login</button></div>
-        </form>
-        <form action='/admin' method='get'>
-          <div><button type="submit" className="btn btn-primary">Admin</button></div>
-        </form>
-=======
       <div id="main_nav" style={boxStyle}>
         <div id="main_nav_logo">
           <a href='/'>
@@ -46,7 +36,6 @@ class Navbar extends React.Component {
               <button type='submit'>ADMIN</button>
             </form>
           </div>
->>>>>>> homepage
       </div>
     )
   }
