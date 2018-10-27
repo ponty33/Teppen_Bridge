@@ -152,7 +152,23 @@ Review.create(
 Review.create(
   teacher_id: teacher2.id,
   content: "I hope.",
-  rating: 1,
+  rating: 4,
+  parent_id: parent2.id,
+  subject_id: subject1.id
+)
+
+Review.create(
+  teacher_id: teacher3.id,
+  content: "I hope.",
+  rating: 3,
+  parent_id: parent2.id,
+  subject_id: subject1.id
+)
+
+Review.create(
+  teacher_id: teacher4.id,
+  content: "I hope.",
+  rating: 4,
   parent_id: parent2.id,
   subject_id: subject1.id
 )
