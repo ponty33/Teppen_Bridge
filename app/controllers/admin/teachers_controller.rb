@@ -20,6 +20,7 @@ class Admin::TeachersController < ApplicationController
       end
 
       now_teacher[:id] = teacher.id
+      now_teacher[:img_url] = teacher.img_url
       now_teacher[:name] = teacher.name
       now_teacher[:email] = teacher.email
       now_teacher[:hourly_wage] = teacher.hourly_wage
