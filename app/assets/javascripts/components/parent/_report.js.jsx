@@ -18,7 +18,7 @@ class Report extends React.Component {
   handleChartHover(i, hoverLoc, activePoint) {
     this.state.hoverLoc[i] = hoverLoc;
     this.state.activePoint[i] = activePoint;
-    
+
     this.setState({
       reports: this.state.reports,
       hoverLoc: this.state.hoverLoc,
@@ -69,47 +69,55 @@ class Report extends React.Component {
     //   if(i==1)
     //   return
 
-      let reports = this.state.reports.map((studentReport,i) => {
-      
-        return (
+    let reports = this.state.reports.map((studentReport, i) => {
+
+      return (
+        <div>
+          <br></br>
+          <br></br>
+          <br></br>
+          <div id="chart_title">
+            {` Report of student: ${studentReport.student}`}
+          </div>
           <div className="graph-container">
-              <div >
-              {` Report of student ${studentReport.student}`}
-            </div>
+
             <div className="y_label_container">
               <div>100%</div>
               <div className="zero_label">0</div>
             </div>
-  
-  
+
+
             <div className='row'>
               <div className='popup'>
                 {this.state.hoverLoc[i] ? <ToolTip hoverLoc={this.state.hoverLoc[i]} activePoint={this.state.activePoint[i]} /> : null}
               </div>
             </div>
-  
-  
+
+
             <div className='row'>
               <div id="linechart" className='chart'>
                 <LineChart onChartHover={(a, b) => this.handleChartHover(i, a, b)} data={this.createChartData(studentReport.assignments, studentReport.student)} />
               </div>
             </div>
-  
-          
-          </div>)
+
+
+          </div>
+        </div>)
 
     })
 
     //allReports = allReports.concat(reports);
-    
+
 
     // });
-     console.log("allReports length",reports.length);
+    console.log("allReports length", reports.length);
     return (
       <div className='container'>
         <br></br>
-        <div id="report">
-          <span><h1>report</h1></span><span><img src={asset_paths.chart} /></span>
+        <div className="jumbotron">
+          <h1>report</h1>
+          <br></br>
+          <img src={asset_paths.chart} />
         </div>
         {reports}
       </div>
