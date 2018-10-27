@@ -27,10 +27,29 @@ class Assignment extends React.Component {
         return (
           <div className="assignment_box" key={assignment.id}>
             <div>
-              <h4>Student :{element.student}</h4>
-              <h4>Assignment Name: {assignment.name}</h4>
-              <h4>Score: {assignment.score}</h4>
-              <h4>Comment: {assignment.feedback}</h4>
+
+              <div id="text_container">
+                <h3 id="text_teacher_reviews">Student:</h3>
+                <h3>{element.student}</h3>
+              </div>
+
+              <div id="text_container">
+                <h3 id="text_teacher_reviews">Assignment Name:</h3>
+                <h3>{assignment.name}</h3>
+              </div>
+
+              <div id="text_container">
+                <h3 id="text_teacher_reviews">Score:</h3>
+                <h3>{assignment.score}</h3>
+              </div>
+
+              <div id="text_container">
+                <h3 id="text_teacher_reviews">Comment:</h3>
+                <h3>{assignment.feedback}</h3>
+              </div>
+
+
+
             </div>
           </div>
         )
@@ -54,7 +73,6 @@ class Assignment extends React.Component {
   }
 
 }
-
 
 
 
