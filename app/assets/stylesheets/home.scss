@@ -51,6 +51,12 @@
   fill: #fff;
   stroke-width: 2;
 }
+.linechart_area {
+  padding: 8px;
+  fill: #64B5F6;
+  stroke: none;
+  opacity: .4;
+}
 
 #linechart{
   width: 1000px;
@@ -58,7 +64,6 @@
   margin-left: 50px;
   margin-right: 50px;
   margin-top: 30px;
-  background-color: lightblue
 }
 .popup {
   min-height: 50px;

@@ -93,6 +93,21 @@ class LineChart extends React.Component {
         )
     }
 
+    getX() {
+        const { data } = this.props;
+        return {
+            min: data[0].x,
+            max: data[data.length - 1].x
+        }
+    }
+    getY() {
+        const { data } = this.props;
+        return {
+            min: data.reduce((min, p) => p.y < min ? p.y : min, data[0].y),
+            max: data.reduce((max, p) => p.y > max ? p.y : max, data[0].y)
+        }
+    }
+
     getCoords(e) {
         const { svgWidth, data, yLabelSize } = this.props;
         const svgLocation = document.getElementsByClassName("svg_graph")[0].getBoundingClientRect();
@@ -100,7 +115,7 @@ class LineChart extends React.Component {
         const relativeLoc = e.clientX - svgLocation.left - adjustment;
 
         let svgData = [];
-        data.map((point, i) => {
+        data.map((point) => {
             svgData.push({
                 svgX: this.getSvgX(point.x),
                 svgY: this.getSvgY(point.y),
@@ -147,6 +162,21 @@ class LineChart extends React.Component {
             />
         );
     }
+    makeArea() {
+        const { data } = this.props;
+        let pathD = "M " + this.getSvgX(data[0].x) + " " + this.getSvgY(data[0].y) + " ";
+
+        pathD += data.map((point, i) => {
+            return "L " + this.getSvgX(point.x) + " " + this.getSvgY(point.y) + " ";
+        }).join("");
+
+        const x = this.getX();
+        const y = this.getY();
+        pathD += "L " + this.getSvgX(x.max) + " " + this.getSvgY(0) + " "
+            + "L " + this.getSvgX(0) + " " + this.getSvgY(0) + " ";
+
+        return <path className="linechart_area" d={pathD} />
+    }
 
     render() {
         const { svgHeight, svgWidth } = this.props;
@@ -155,6 +185,7 @@ class LineChart extends React.Component {
                 onMouseMove={(e) => this.getCoords(e)}>
                 {this.makePath()}
                 {this.makeAxis()}
+                {this.makeArea()}
                 {/*{this.makeLabels()}*/}
                 {this.state.hoverLoc ? this.makeActivePoint() : null}
             </svg>
@@ -167,6 +198,6 @@ LineChart.defaultProps = {
     svgHeight: 500,
     svgWidth: 1000,
     color: '#2196F3',
-    pointRadius: 5,
+    pointRadius: 9,
 }
 // export default LineChart;
