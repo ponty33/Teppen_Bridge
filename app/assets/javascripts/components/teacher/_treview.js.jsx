@@ -59,7 +59,7 @@ class Treview extends React.Component {
       <div className="container">
         <br></br>
         <div className="jumbotron">
-          <h1>Your feedback from our parents!</h1>
+          <h1>Your feedback from parents!</h1>
           <br></br>
           <img className="teacher_image" src={this.state.teacher} />
         </div>
