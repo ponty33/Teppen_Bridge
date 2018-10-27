@@ -27,10 +27,10 @@ class Assignment extends React.Component {
         return (
           <div className="assignment_box" key={assignment.id}>
             <div>
-              <h2>Student :{element.student}</h2>
-              <h2>Assignment Name: {assignment.name}</h2>
-              <h2>Score: {assignment.score}</h2>
-              <h2>Comment: {assignment.feedback}</h2>
+              <h4>Student :{element.student}</h4>
+              <h4>Assignment Name: {assignment.name}</h4>
+              <h4>Score: {assignment.score}</h4>
+              <h4>Comment: {assignment.feedback}</h4>
             </div>
           </div>
         )
