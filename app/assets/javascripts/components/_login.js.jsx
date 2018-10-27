@@ -6,7 +6,6 @@ class Login extends React.Component{
     return(
       <div className="container">
 
-        <Navbar />
         <div className="jumbotron">
         
         <form className="form-horizontal" id="login-form" action='/login' method='post'>
