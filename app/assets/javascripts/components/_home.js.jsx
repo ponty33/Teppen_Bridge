@@ -3,7 +3,8 @@ class Home extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      teachers: []
+      teachers: [],
+      user_id: 0
     };
   }
 
@@ -53,7 +54,7 @@ class Home extends React.Component{
     
     return(
       <div>
-        <Navbar />
+        <Navbar user_id={this.state.user_id} />
         <h1 style={style}>Our Teachers</h1>
         <div style={style}>
           {teachers}

@@ -1,4 +1,4 @@
-class Navbar extends React.Component {
+class Navbarl extends React.Component {
 
 
 
@@ -7,7 +7,7 @@ class Navbar extends React.Component {
       display: 'flex',
       justifyContent: 'space-between'
     }
-
+    
     var style = {
       float: 'right',
       paddingRight: '2em',
@@ -17,16 +17,13 @@ class Navbar extends React.Component {
     var textStyle = {
       paddingTop: '1.5em',
       textAlign: 'center',
-      fontSize: '2.5em',
-      fontFamily: 'Asap Condensed',
-      fontSize: '55px'
-
+      fontSize: '2.5em'
     };
 
     var buttonStyle = {
       padding: '1em'
     }
-
+    
     return (
       <div id="main_nav" style={boxStyle}>
         <div id="main_nav_logo">
@@ -34,9 +31,8 @@ class Navbar extends React.Component {
             <img src={asset_paths.teppen_bridge} />
           </a>
         </div>
-        <h1 style={textStyle}>Education – Your Bridge To The Future.</h1>
+          <h1 style={textStyle}>Education – Your Bridge To The Future.</h1>
         <div style={style}>
-          <Loginb user_id={this.props.user_id}/>
           <form action='/admin' method='get'style={buttonStyle}>
             <button type='submit' className="btn btn-secondary">ADMIN</button>
           </form>
