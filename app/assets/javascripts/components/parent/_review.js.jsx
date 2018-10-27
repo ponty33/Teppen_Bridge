@@ -107,7 +107,7 @@ class Review extends React.Component {
 
           <div className="dropdown">
             <div><h5 id="new_enroll_fonts">Please select the teacher:</h5></div>
-            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button className="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {this.state.selectedTeacher}
             </button>
 
@@ -126,7 +126,7 @@ class Review extends React.Component {
 
           <div className="dropdown">
             <div><h5 id="new_enroll_fonts">Please select the subject:</h5></div>
-            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button className="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {this.state.selectedSubject}
             </button>
 
@@ -145,7 +145,7 @@ class Review extends React.Component {
 
           <div className="dropdown">
             <div><h5 id="new_enroll_fonts">Rate the teacher:</h5></div>
-            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button className="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {this.state.selectedRating}
             </button>
 
@@ -168,7 +168,7 @@ class Review extends React.Component {
 
           <br />
 
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" className="btn btn-dark">Submit</button>
         </form>
       </div>
     )
