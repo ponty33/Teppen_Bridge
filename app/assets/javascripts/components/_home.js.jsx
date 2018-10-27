@@ -22,28 +22,34 @@ class Home extends React.Component{
 
   
   render() {
+    var style = {
+      display: 'flex',
+      justifyContent: 'space-evenly'
+    };
+
+    var imgStyle = {
+      borderRadius: '3em'
+    }
+    
     var teachers = this.state.teachers.map((teacher) => {
       return(
        <div key={teacher.id}>
-        <img src={teacher.img_url} className="img-thumbnail" />
+        <img src={teacher.img_url} style={imgStyle} className="img-thumbnail" />
         
-        <h2>{teacher.name}</h2>
+        <h2 style={style}>{teacher.name}</h2>
        </div>
       )
      })
     
-    var style = {
-      display: 'flex'
-    };
+
     
     return(
       <div>
         <Navbar />
-        <h1>Our Teachers</h1>
+        <h1 style={style}>Our Teachers</h1>
         <div style={style}>
           {teachers}
         </div>
-        <Footer />
       </div>
     )
   }
