@@ -28,12 +28,7 @@ class Teacherinfo extends React.Component{
       user_id: this.state.user_id
     });
   }
-  
-  // <button value='profile' className="tablinks" onClick={onclickhandler}>Profile</button>
-  // <button value='assignments' className="tablinks" onClick={onclickhandler}>Assignment</button>
-  // <button value='subjects' className="tablinks" onClick={onclickhandler}>Subject</button>
-  // <button value='reviews' className="tablinks" onClick={onclickhandler}>Reviews</button>
-  
+
   
   render() {
     
