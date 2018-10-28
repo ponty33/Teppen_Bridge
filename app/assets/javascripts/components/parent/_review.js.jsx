@@ -93,7 +93,7 @@ class Review extends React.Component {
       <div className="container">
         <br></br>
         <div className="jumbotron">
-          <h1>let us know what you think!</h1>
+          <h1>Let us know what you think!</h1>
           <br></br>
           <img src={asset_paths.review} />
         </div>

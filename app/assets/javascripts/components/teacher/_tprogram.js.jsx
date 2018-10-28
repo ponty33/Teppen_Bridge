@@ -50,9 +50,9 @@ class Tprogram extends React.Component {
       <div className="container">
         <br></br>
         <div className="jumbotron">
-          <h1>your current programs!</h1>
+          <h1>Your current programs!</h1>
           <br></br>
-          <img src={asset_paths.review} />
+          <img src={asset_paths.programs} />
         </div>
 
         {programs}

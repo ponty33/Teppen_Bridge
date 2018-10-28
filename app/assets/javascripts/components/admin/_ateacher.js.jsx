@@ -1,5 +1,5 @@
-class Ateacher extends React.Component{
-  
+class Ateacher extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -7,46 +7,46 @@ class Ateacher extends React.Component{
     };
     this.click = this.click.bind(this)
   }
-  
+
   click(e) {
     e.preventDefault()
   }
 
   componentDidMount() {
     fetch(`/admin/teachers`)
-    .then((response) => {
+      .then((response) => {
         return response.json();
-    })
-    .then((data) => {
-      console.log("Data incoming...");
-      this.setState({ teachers: data })
-      console.log("after setting state ");
-    })
+      })
+      .then((data) => {
+        console.log("Data incoming...");
+        this.setState({ teachers: data })
+        console.log("after setting state ");
+      })
   }
-  
+
   render() {
     var teachers = this.state.teachers.map((teacher) => {
-      return(
-       <div className="jumbotron" key={teacher.id}>
-        <h2>Teacher Name: {teacher.name}</h2>
-        <h2>E-mail: {teacher.email}</h2>
-        <h2>Hourly wage: {teacher.hourly_wage}</h2>
-        <h2>Average rating: {teacher.avg_rating}</h2>
-       </div>
+      return (
+        <div id="admin_textbox" className="jumbotron" key={teacher.id}>
+          <h2>Teacher Name: {teacher.name}</h2>
+          <h2>E-mail: {teacher.email}</h2>
+          <h2>Hourly wage: {teacher.hourly_wage}</h2>
+          <h2>Average rating: {teacher.avg_rating}</h2>
+        </div>
       )
-     })
-    
-    return(
+    })
+
+    return (
       <div className="container">
         <br></br>
         <div className="jumbotron">
-          <h1>teachers</h1>
+          <h1>Teachers</h1>
           <br></br>
-          <img src={asset_paths.family} />
+          <img src={asset_paths.teacher} />
         </div>
 
         <h1>Add New Teacher</h1>
-        <form className="jumbotron" action='/admin/teachers' method='post'>
+        <form id="admin_add" className="jumbotron" action='/admin/teachers' method='post'>
 
           <div className="form-group">
             <label htmlFor="exampleFormControlTextarea1">Teacher name:</label>
@@ -65,12 +65,13 @@ class Ateacher extends React.Component{
 
           <div><button type="submit" className="btn btn-primary">Add</button></div>
         </form>
-      
+
         <div>
           <h1>Teachers</h1>
           {teachers}
         </div>
       </div>
-    )}
+    )
+  }
 
 }

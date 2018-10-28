@@ -62,7 +62,7 @@ class Assignment extends React.Component {
         <br></br>
         <div className="container">
           <div className="jumbotron">
-            <h1>assignments</h1>
+            <h1>Assignments</h1>
             <br></br>
             <img src={asset_paths.assignment} />
           </div>
