@@ -40,7 +40,7 @@ class Admission extends React.Component {
       <div className="container">
         <br></br>
         <div className="jumbotron">
-          <h1>current enrollments</h1>
+          <h1>Current enrollments</h1>
           <br></br>
           <img src={asset_paths.current_enrollment} />
         </div>

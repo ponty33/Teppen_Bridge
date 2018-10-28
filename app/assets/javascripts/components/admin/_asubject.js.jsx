@@ -1,48 +1,48 @@
-class Asubject extends React.Component{
-  
+class Asubject extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
       subjects: []
     };
   }
-  
+
   componentDidMount() {
     fetch(`/admin/subjects`)
-    .then((response) => {
+      .then((response) => {
         return response.json();
-    })
-    .then((data) => {
-      console.log("Data incoming...");
-      this.setState({ subjects: data })
-      console.log("after setting state ");
-    })
+      })
+      .then((data) => {
+        console.log("Data incoming...");
+        this.setState({ subjects: data })
+        console.log("after setting state ");
+      })
   }
-  
+
   render() {
     var subjects = this.state.subjects.map((subject) => {
-      return(
+      return (
 
 
-        <div className="jumbotron" key={subject.id}>
+        <div id="admin_textbox" className="jumbotron" key={subject.id}>
           <h2>Subject: {subject.name}</h2>
           <h2>Price: {subject.cost}</h2>
         </div>
 
       )
-     })
-    
-    return(
+    })
+
+    return (
       <div className="container">
         <br></br>
         <div className="jumbotron">
-          <h1>subjects</h1>
+          <h1>Subjects</h1>
           <br></br>
-          <img src={asset_paths.family} />
+          <img src={asset_paths.subject} />
         </div>
 
         <h1>Add New Subject</h1>
-        <form className="jumbotron" action='/admin/subjects' method='post'>
+        <form id="admin_add" className="jumbotron" action='/admin/subjects' method='post'>
 
           <div className="form-group">
             <label htmlFor="exampleFormControlTextarea1">Subject name:</label>
@@ -61,6 +61,7 @@ class Asubject extends React.Component{
           {subjects}
         </div>
       </div>
-    )}
+    )
+  }
 
 }

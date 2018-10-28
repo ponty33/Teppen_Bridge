@@ -115,7 +115,7 @@ class Report extends React.Component {
       <div className='container'>
         <br></br>
         <div className="jumbotron">
-          <h1>report</h1>
+          <h1>Report</h1>
           <br></br>
           <img src={asset_paths.chart} />
         </div>

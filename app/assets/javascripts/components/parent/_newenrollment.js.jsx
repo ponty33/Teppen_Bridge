@@ -71,7 +71,7 @@ class Newenrollment extends React.Component {
 
 
         <div className="jumbotron">
-          <h1>new enrollment</h1>
+          <h1>New enrollment</h1>
           <br></br>
           <img src={asset_paths.new_enrollment} />
         </div>

@@ -1,5 +1,5 @@
-class Tassignment extends React.Component{
-  
+class Tassignment extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -22,17 +22,17 @@ class Tassignment extends React.Component{
   //   })
   // }
 
-  handleUpdate(assignemntper){
-  //   fetch(`http://localhost:3000/api/v1/fruits/${assignmentper.id}`, 
-  //   {
-  //     method: 'PUT',
-  //     body: JSON.stringify({assignemntper: assignemntper}),
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     }
-  //   }).then((response) => { 
-  //       this.updateStatus(assignemntper)
-  //     })
+  handleUpdate(assignemntper) {
+    //   fetch(`http://localhost:3000/api/v1/fruits/${assignmentper.id}`, 
+    //   {
+    //     method: 'PUT',
+    //     body: JSON.stringify({assignemntper: assignemntper}),
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     }
+    //   }).then((response) => { 
+    //       this.updateStatus(assignemntper)
+    //     })
   }
 
   // updateStatus(assignemntper){
@@ -45,41 +45,42 @@ class Tassignment extends React.Component{
 
   componentDidMount() {
     fetch(`/teachers/${this.props.teacher_id}/assignments/`)
-    .then((response) => {
+      .then((response) => {
         return response.json();
-    })
-    .then((data) => {
-      console.log("Data incoming...");
-      this.setState({ assignments: data })
-      console.log("after setting state ");
-    })
+      })
+      .then((data) => {
+        console.log("Data incoming...");
+        this.setState({ assignments: data })
+        console.log("after setting state ");
+      })
   }
-  
+
 
   render() {
     var assignments = this.state.assignments.map((assignment) => {
-      let status = this.state.editable ? <input type='text' ref={input => this.status = input} defaultValue={assignment.status}/>:<h3>{assignment.status}</h3>
-      let score = this.state.editable ? <input type='text' ref={input => this.score = input} defaultValue={assignment.score}/>:<h3>{assignment.score}</h3>  
-      return(
-          <div key={assignment.id}>
-           <Tassignmentper teacher_id={this.props.teacher_id} assignment={assignment} handleUpdate ={this.handleUpdate}/>
-          </div>
-        )
+      let status = this.state.editable ? <input type='text' ref={input => this.status = input} defaultValue={assignment.status} /> : <h3>{assignment.status}</h3>
+      let score = this.state.editable ? <input type='text' ref={input => this.score = input} defaultValue={assignment.score} /> : <h3>{assignment.score}</h3>
+      return (
+        <div key={assignment.id}>
+          <Tassignmentper teacher_id={this.props.teacher_id} assignment={assignment} handleUpdate={this.handleUpdate} />
+        </div>
+      )
     })
-    
-    return(
+
+    return (
       <div className="container">
         <br></br>
         <div className="jumbotron">
           <h1>Assignments status!</h1>
           <br></br>
-          <img src={asset_paths.assignment} />
+          <img src={asset_paths.assignment2} />
         </div>
-
-        {assignments}
-
+        <div>
+          {assignments}
+        </div>
       </div>
-    )}
+    )
+  }
 }
 
 // t.string "name"
