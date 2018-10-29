@@ -101,7 +101,8 @@ class Report extends React.Component {
 
 
           </div>
-        </div>)
+        </div>
+      )
 
     })
 
