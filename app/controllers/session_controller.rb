@@ -31,12 +31,18 @@ class SessionController < ApplicationController
   end
   
   def show
-    result = []
-    result.push(session[:user_id])
-    # byebug
-    teacher = Teacher.find_by(:id => session[:user_id])
-    result.push(teacher.name)
-    render json: result
+    if session[:user_type] == "teacher"
+      result = []
+      result.push(session[:user_id])
+      teacher = Teacher.find_by(:id => session[:user_id])
+      result.push(teacher.name)
+      render json: result
+    end
+
+    if session[:user_type] == "parent"
+      render json: session[:user_id]
+    end
+
   end
 
 
