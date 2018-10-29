@@ -94,17 +94,17 @@ student3 = parent3.students.create!({
 })
 
 student4 = parent1.students.create!({
-  name:'Jack Chang',
+  name:'Jack Williams',
   age: 13
 })
 
 
 puts "Creating Subjects ..."
 
-subject1 = Subject.create(name:'Math', cost: 200)
-subject2 = Subject.create(name:'Chemistry', cost: 195)
-subject3 = Subject.create(name:'Physics', cost: 190)
-subject4 = Subject.create(name:'Biology', cost: 180)
+subject1 = Subject.create(name:'Math', cost: 8200)
+subject2 = Subject.create(name:'Chemistry', cost: 8900)
+subject3 = Subject.create(name:'Physics', cost: 8750)
+subject4 = Subject.create(name:'Biology', cost: 8800)
 
 
 
@@ -137,7 +137,7 @@ program4 = Program.create(
   subject_id:subject3.id, 
   teacher_id:teacher2.id, 
   start_date:20181010, 
-  end_date:20181130
+  end_date:20181220
 )
 
 
@@ -145,15 +145,15 @@ program4 = Program.create(
 program5 = Program.create(
   subject_id:subject3.id, 
   teacher_id:teacher2.id, 
-  start_date:20181010, 
-  end_date:20181130
+  start_date:20181101, 
+  end_date:20190105
 )
 
 program6 = Program.create(
   subject_id:subject3.id, 
   teacher_id:teacher3.id, 
-  start_date:20181010, 
-  end_date:20181130
+  start_date:20181026, 
+  end_date:20181125
 )
 
 
@@ -161,6 +161,13 @@ program6 = Program.create(
 program7 = Program.create(
   subject_id:subject3.id, 
   teacher_id:teacher3.id, 
+  start_date:20181016, 
+  end_date:20181203
+)
+
+program8 = Program.create(
+  subject_id:subject1.id, 
+  teacher_id:teacher4.id, 
   start_date:20181010, 
   end_date:20181130
 )
@@ -183,7 +190,7 @@ Review.create(
 
 Review.create(
   teacher_id: teacher2.id,
-  content: "I hope.",
+  content: "I want more homework for my children.",
   rating: 4,
   parent_id: parent2.id,
   subject_id: subject1.id
@@ -191,7 +198,7 @@ Review.create(
 
 Review.create(
   teacher_id: teacher3.id,
-  content: "I hope.",
+  content: "I hope the program is longer.",
   rating: 3,
   parent_id: parent2.id,
   subject_id: subject1.id
@@ -199,7 +206,7 @@ Review.create(
 
 Review.create(
   teacher_id: teacher4.id,
-  content: "I hope.",
+  content: "I hope you can offer more subjects.",
   rating: 4,
   parent_id: parent2.id,
   subject_id: subject1.id
@@ -231,24 +238,24 @@ assignment3 = Assignment.create(
 )
 
 assignment4 = Assignment.create(
-  name:'React practice',
-  content: 'Intor Chemisry p.207: #39 - #89',
+  name:'Atom practice',
+  content: 'Intor Chemisry p.207: #39 - #45',
   start_date: 20181121,
   end_date: 20181230,
   program_id: program2.id
 )
 
 assignment5 = Assignment.create(
-  name:'Rails practice',
-  content: 'Intor Chemisry p.207: #39 - #89',
+  name:'Proton-electron practice',
+  content: 'Intor Chemisry p.207: #46 - #61',
   start_date: 20191121,
   end_date: 20191230,
   program_id: program2.id
 )
 
 assignment6 = Assignment.create(
-  name:'Java practice',
-  content: 'Intor Chemisry p.207: #39 - #89',
+  name:'Chemical change practice',
+  content: 'Intor Chemisry p.207: #70 - #88',
   start_date: 20191021,
   end_date: 20191130,
   program_id: program2.id
@@ -353,4 +360,14 @@ Admission.create(
 Admission.create(
   program_id: program7.id,
   student_id: student4.id
+)
+
+Admission.create(
+  program_id: program8.id,
+  student_id: student4.id
+)
+
+Admission.create(
+  program_id: program8.id,
+  student_id: student1.id
 )
