@@ -14,7 +14,7 @@ class Areport extends React.Component {
     let { width, height } = this.props;
     let box = (
       <path d={`M 0 0 H ${width} V ${height} H 0 V0`}
-        fill='transparent' stroke='blue' />
+        fill='transparent' stroke='blue' stroke-width="2.2px" />
     );
     console.log("box ", this.state);
     return box;
@@ -58,7 +58,7 @@ class Areport extends React.Component {
           x={barx}
           y={height - relativeHeight}
           width={barWidth} height={relativeHeight}
-          style={{ fill: 'cyan', stroke: 'gray' }} />
+          style={{ fill: 'green', stroke: 'gray' }} />
           );
       });
       console.log("bars", bars);
@@ -89,31 +89,14 @@ class Areport extends React.Component {
           x={barx+barWidth}
           y={ height- relativeHeight}
           width={barWidth} height={relativeHeight}
-          style={{ fill: 'cyan', stroke: 'gray' }} />
+          style={{ fill: 'purple', stroke: 'gray' }} />
           );
       });
       console.log("bars", bars);
       return bars;
     }
   }
-  // Check data to draw
-  // let noData = (dataSeries.length === 0);
-  // let graph = [];
-  // const xAxisHeight = 50;
 
-  // if (noData) {
-  //   graph = (<text x={width / 8} y={height / 2}>No data...</text>);
-  // } else {
-  //   // Draw Bars
-  //   let barWidth = width / dataSeries.length;
-  //   let bars = dataSeries.map((elem, index) => {
-  //     let barx = index * barWidth;
-  //     return (<rect key={`bar_${index}`}
-  //       x={barx}
-  //       y={height - elem}
-  //       width={barWidth} height={elem}
-  //       style={{ fill: 'cyan' , stroke: 'gray' }} />);
-  //   });
 
   createLabels() {
     let { width, height, dataLabels, dataSeries } = this.props;
@@ -121,7 +104,7 @@ class Areport extends React.Component {
     const xAxisHeight = 50;
     let widthApart = barWidth*3
     let labels = this.state.teacherNames.map((elem, index) => {
-      let barx = index * barWidth*3;
+      let barx = index * barWidth*3 + (barWidth/2);
       return (<text key={`lbl_${index}`}
         x={barx}
         y={height + (xAxisHeight / 2)}
@@ -132,16 +115,7 @@ class Areport extends React.Component {
     console.log("lables", labels);
     return labels;
   }
-  // Return a <text> element, containing labels for each val
-  // let labels = dataLabels.map((elem, index) => {
-  //   let barx = index * barWidth;
-  //   return (<text key={`lbl_${index}`}
-  //     x={barx}
-  //     y={height + (xAxisHeight / 2)}
-  //     style={{ fontSize: '.9em' }}>
-  //     {elem}
-  //   </text>);
-  // });
+
 
   createtotalEarningsValues() {
     let { width, height, dataSeries } = this.props;
@@ -159,22 +133,12 @@ class Areport extends React.Component {
     return values;
 
   }
-  // Return a <text> element, with actual value for each bar
-  // let values = dataSeries.map((elem, index) => {
-  //   let barx = index * barWidth;
-  //   return (<text key={`row_${index}`}
-  //     x={barx + (barWidth / 3)}
-  //     y={height - elem}
-  //     style={{ fontSize: '.9em' }}>
-  //     {elem}
-  //   </text>);
-  // });
   createGraph() {
     var totalEarningBars = this.createTotalEarnings();
     var teacherEarningsBars = this.createTeacherEarnings();
     var labels = this.createLabels();
     var values = this.createtotalEarningsValues();
-    return ([...totalEarningBars,...teacherEarningsBars,...labels, ...values]);
+    return ([...totalEarningBars,...teacherEarningsBars,...labels]);
   }
   // Compose bars,labels and values
   // graph = [...bars, ...labels, ...values];
@@ -203,8 +167,8 @@ Areport.propTypes = {
   dataLabels: PropTypes.array
 };
 Areport.defaultProps = {
-  width: 200,
-  height: 200,
+  width: 600,
+  height: 300,
   dataSeries: [20, 30, 40, 190],
   dataLabels: ["Kanwal", "Cool", "Captain", "Nicholas"]
 };

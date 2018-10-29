@@ -133,6 +133,38 @@ program3 = Program.create(
 )
 
 
+program4 = Program.create(
+  subject_id:subject3.id, 
+  teacher_id:teacher2.id, 
+  start_date:20181010, 
+  end_date:20181130
+)
+
+
+
+program5 = Program.create(
+  subject_id:subject3.id, 
+  teacher_id:teacher2.id, 
+  start_date:20181010, 
+  end_date:20181130
+)
+
+program6 = Program.create(
+  subject_id:subject3.id, 
+  teacher_id:teacher3.id, 
+  start_date:20181010, 
+  end_date:20181130
+)
+
+
+
+program7 = Program.create(
+  subject_id:subject3.id, 
+  teacher_id:teacher3.id, 
+  start_date:20181010, 
+  end_date:20181130
+)
+
 Review.create(
   teacher_id: teacher1.id,
   content: "My son's grade improves significantly!",
@@ -304,5 +336,21 @@ Admission.create(
 
 Admission.create(
   program_id: program2.id,
+  student_id: student4.id
+)
+
+
+Admission.create(
+  program_id: program5.id,
+  student_id: student1.id
+)
+
+Admission.create(
+  program_id: program6.id,
+  student_id: student2.id
+)
+
+Admission.create(
+  program_id: program7.id,
   student_id: student4.id
 )
