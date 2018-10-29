@@ -2,9 +2,11 @@ class Teacherinfo extends React.Component{
   
   constructor(props) {
     super(props);
+    image = ""
     this.state = {
       page: 'profile',
-      user_id: 0
+      user_id: 0,
+      teacher: asset_paths[image]
     };
     this.updateState = this.updateState.bind(this);
   }
@@ -15,10 +17,11 @@ class Teacherinfo extends React.Component{
     })
     .then((data) => {
       console.log("Data incoming...");
-      console.log("Parent ID is: " ,data);
+      console.log("Teacher ID is: " ,data);
       this.setState({
         page: this.state.page,
-        user_id: JSON.parse(data)
+        user_id: JSON.parse(data[0]),
+        teacher: asset_paths[data[1].toLowerCase()]
       });
     })
   }
@@ -34,7 +37,7 @@ class Teacherinfo extends React.Component{
     
     let childComponent = "";
     if (this.state.page === 'profile') {
-      childComponent = <Tprofile teacher_id={this.state.user_id}/>
+      childComponent = <Tprofile teacher_id={this.state.user_id} teacher={this.state.teacher}/>
     } else if (this.state.page === 'assignments') {
       childComponent = <Tassignment teacher_id={this.state.user_id}/>
     } else if (this.state.page === 'programs') {
