@@ -12,7 +12,7 @@
 
 
 #main_nav {
-    background-color: #BAB2B5;
+    background-color: #98a4ac;
 }
 
 
@@ -39,20 +39,33 @@
     border-color: black;
     border-style: solid;
     border-width: 3.5px;
-    font-size: 18px;
+    font-size: 1.1em;
     font-weight: bold;
     background-color: white;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 
 #admin_tabs{
-    background-color: #BAB2B5;
+    background-color: #98a4ac;
     border-color: black;
     border-width: 4px;
     border-bottom-style: solid;
 }
 
-#testing {
-    display: inline-block;
-    color: blue;
+
+#chart_title{
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    font-size: 35px;
+}
+
+#admin_parents_students {
+    margin-left: 50px;
+}
+
+#teacher_assignment_status {
+    margin-top: 10px;
+    margin-left: 20px;
 }

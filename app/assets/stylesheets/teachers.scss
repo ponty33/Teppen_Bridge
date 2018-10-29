@@ -19,9 +19,42 @@
 	width: 20%;
 }
 
-#admin_tabs{
-    background-color: #BAB2B5;
-    border-color: black;
-    border-width: 4px;
-    border-bottom-style: solid;
+
+
+#text_container h3 {
+	display: inline;
+	margin-left: 30px;
+}
+
+
+#text_teacher_reviews {
+	color: #6d7993;
+}
+
+
+
+#tab_fonts_size{
+	color: greenyellow;
+}
+
+
+#test1{
+	font-size: 30px;
+}
+
+#test2{
+	margin-left: 20px;
+	}
+
+.test2{
+		margin-left: 20px;
+		font-style: italic;
+		font-size: 30px;
+		font-weight: bold;
+		}
+
+
+#teacher_profile{
+	background: white;
+
 }

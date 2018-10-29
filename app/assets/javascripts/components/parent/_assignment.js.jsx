@@ -27,10 +27,29 @@ class Assignment extends React.Component {
         return (
           <div className="assignment_box" key={assignment.id}>
             <div>
-              <h2>Student :{element.student}</h2>
-              <h2>Assignment Name: {assignment.name}</h2>
-              <h2>Score: {assignment.score}</h2>
-              <h2>Comment: {assignment.feedback}</h2>
+
+              <div id="text_container">
+                <h3 id="text_teacher_reviews">Student:</h3>
+                <h3>{element.student}</h3>
+              </div>
+
+              <div id="text_container">
+                <h3 id="text_teacher_reviews">Assignment Name:</h3>
+                <h3>{assignment.name}</h3>
+              </div>
+
+              <div id="text_container">
+                <h3 id="text_teacher_reviews">Score:</h3>
+                <h3>{assignment.score}</h3>
+              </div>
+
+              <div id="text_container">
+                <h3 id="text_teacher_reviews">Comment:</h3>
+                <h3>{assignment.feedback}</h3>
+              </div>
+
+
+
             </div>
           </div>
         )
@@ -43,7 +62,7 @@ class Assignment extends React.Component {
         <br></br>
         <div className="container">
           <div className="jumbotron">
-            <h1>assignments</h1>
+            <h1>Assignments</h1>
             <br></br>
             <img src={asset_paths.assignment} />
           </div>
@@ -54,7 +73,6 @@ class Assignment extends React.Component {
   }
 
 }
-
 
 
 

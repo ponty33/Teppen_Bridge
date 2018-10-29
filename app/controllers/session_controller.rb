@@ -36,7 +36,12 @@ class SessionController < ApplicationController
 
 
   def destroy
+    session[:user_id] = 0
+
+    redirect_to '/'
   end
+
+  private
 
   def authenticate_with_credentials(email, password)
     

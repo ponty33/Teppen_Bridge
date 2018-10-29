@@ -71,7 +71,7 @@ class Newenrollment extends React.Component {
 
 
         <div className="jumbotron">
-          <h1>new enrollment</h1>
+          <h1>New enrollment</h1>
           <br></br>
           <img src={asset_paths.new_enrollment} />
         </div>
@@ -86,7 +86,7 @@ class Newenrollment extends React.Component {
 
             <div className="dropdown">
 
-              <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button className="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {this.state.selectedStudent}
               </button>
 
@@ -106,7 +106,7 @@ class Newenrollment extends React.Component {
             <div className="dropdown">
               <h4 id="new_enroll_fonts">Please select the program:</h4>
 
-              <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button className="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {this.state.selectedProgram}
               </button>
 
@@ -124,7 +124,7 @@ class Newenrollment extends React.Component {
             </div>
             <br></br>
 
-            <div><button type="submit" className="btn btn-primary">Submit</button></div>
+            <div><button type="submit" className="btn btn-dark">Submit</button></div>
           </form>
         </div>
       </div>

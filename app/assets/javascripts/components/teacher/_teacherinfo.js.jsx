@@ -4,7 +4,7 @@ class Teacherinfo extends React.Component{
     super(props);
     this.state = {
       page: 'profile',
-      user_id: 1
+      user_id: 0
     };
     this.updateState = this.updateState.bind(this);
   }
