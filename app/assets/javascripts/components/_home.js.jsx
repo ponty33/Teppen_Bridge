@@ -1,5 +1,5 @@
-class Home extends React.Component{
-  
+class Home extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -10,18 +10,18 @@ class Home extends React.Component{
 
   componentDidMount() {
     fetch(`/admin/teachers`)
-    .then((response) => {
+      .then((response) => {
         return response.json();
-    })
-    .then((data) => {
-      console.log("Data incoming...");
-      this.setState({ teachers: data })
-      console.log("after setting state ");
-    })
+      })
+      .then((data) => {
+        console.log("Data incoming...");
+        this.setState({ teachers: data })
+        console.log("after setting state ");
+      })
   }
-  
 
-  
+
+
   render() {
     var style = {
       display: 'flex',
@@ -30,7 +30,7 @@ class Home extends React.Component{
     };
 
     var imgStyle = {
-      borderRadius: '3em'
+      borderRadius: '9em'
     }
 
     var cardStyle = {
@@ -40,19 +40,19 @@ class Home extends React.Component{
     var teaName = {
       textAlign: 'center'
     }
-    
-    var teachers = this.state.teachers.map((teacher) => {
-      return(
-       <div key={teacher.id}>
-        <img src={teacher.img_url} style={imgStyle} className="img-thumbnail" />
-        <h2 style={teaName}>{teacher.name}</h2>
-       </div>
-      )
-     })
-    
 
-    
-    return(
+    var teachers = this.state.teachers.map((teacher) => {
+      return (
+        <div key={teacher.id}>
+          <img src={teacher.img_url} style={imgStyle} className="img-thumbnail" />
+          <h2 style={teaName}>{teacher.name}</h2>
+        </div>
+      )
+    })
+
+
+
+    return (
       <div>
         <Navbar user_id={this.state.user_id} />
         <h1 style={style}>Our Teachers</h1>
