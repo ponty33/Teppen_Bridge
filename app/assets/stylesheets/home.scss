@@ -111,3 +111,17 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.login_admin_button_container {
+  width: 200px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#admin_button {
+  margin-left: 25px;
+}
+
+#admin_button_login {
+  margin-left: 100px;
+}
