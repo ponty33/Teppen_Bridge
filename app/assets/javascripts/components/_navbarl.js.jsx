@@ -32,8 +32,8 @@ class Navbarl extends React.Component {
           </a>
         </div>
           <h1 style={textStyle}>Education – Your Bridge To The Future.</h1>
-        <div style={style}>
-          <form action='/admin' method='get'style={buttonStyle}>
+        <div className="login_admin_button_container">
+          <form id="admin_button_login" className="d-flex align-items-end" action='/admin' method='get'>
             <button type='submit' className="btn btn-secondary">ADMIN</button>
           </form>
         </div>
