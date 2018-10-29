@@ -31,7 +31,12 @@ class SessionController < ApplicationController
   end
   
   def show
-    render json: session[:user_id]
+    result = []
+    result.push(session[:user_id])
+    # byebug
+    teacher = Teacher.find_by(:id => session[:user_id])
+    result.push(teacher.name)
+    render json: result
   end
 
 

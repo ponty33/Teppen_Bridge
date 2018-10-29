@@ -38,7 +38,7 @@ class Admin::TeachersController < ApplicationController
       name: params[:name],
       email: params[:email],
       password: params[:password],
-      hourly_wage: 1,
+      hourly_wage: 25,
       img_url: 'www.gg'
     )
 
