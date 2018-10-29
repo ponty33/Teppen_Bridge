@@ -61,7 +61,6 @@ class Report extends React.Component {
   }
 
 
-
   render() {
 
     //let allReports = []
@@ -117,3 +116,10 @@ class Report extends React.Component {
   }
 
 }
+
+Report.propTypes = {
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  dataSeries: PropTypes.array.isRequired,
+  dataLabels: PropTypes.array
+};
