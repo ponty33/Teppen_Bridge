@@ -35,11 +35,15 @@ class Navbar extends React.Component {
           </a>
         </div>
         <h1 style={textStyle}>Education – Your Bridge To The Future.</h1>
-        <div style={style}>
+        {/* <div className="login_admin_button" style={style}> */}
+        <div className="login_admin_button_container">
+
           <Loginb user_id={this.props.user_id}/>
-          <form action='/admin' method='get'style={buttonStyle}>
+
+          <form id="admin_button" className="d-flex align-items-end" action='/admin' method='get'>
             <button type='submit' className="btn btn-secondary">ADMIN</button>
           </form>
+
         </div>
       </div>
     )

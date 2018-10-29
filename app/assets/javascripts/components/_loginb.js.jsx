@@ -5,13 +5,13 @@ function Loginb(props) {
   
   if (props.user_id === 0) {
     return(
-      <form action='/login' method='get' style={buttonStyle}>
+      <form className="d-flex align-items-end" action='/login' method='get'>
         <button type="submit" className="btn btn-primary">LOGIN</button>
       </form>
     )
   } else {
     return(
-      <form action='/logout' method='get' style={buttonStyle}>
+      <form className="d-flex align-items-end" action='/logout' method='get'>
         <button type="submit" className="btn btn-danger">LOGOUT</button>
       </form>
     )
