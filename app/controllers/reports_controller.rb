@@ -12,9 +12,11 @@ class Admin::ReportsController < ApplicationController
         totalEarnings = totalEarnings + (teacherProg.admissions.length * teacherProg.subject.cost)
         teacherEarnings = teacherEarnings + (teacher.hourly_wage * (teacherProg.end_date - teacherProg.start_date) * 2)  
       end
-      teacherStats = { teacherName: teacher.name,
-                       totalEarnings: totalEarnings,
-                       teacherEarnings: teacherEarnings}
+      teacherStats = { 
+        teacherName: teacher.name,
+        totalEarnings: totalEarnings,
+        teacherEarnings: teacherEarnings
+      }
       profitsData.push(teacherEarnings)
     end
     render json: profitsData

@@ -1,7 +1,5 @@
 class Login extends React.Component{
   
-  
-  
   render() {
     var style = {
       paddingTop: '1em'
@@ -9,7 +7,7 @@ class Login extends React.Component{
     
     return(
       <div>
-         <Navbarl />
+        <Navbarl />
  
       <div className="container" style={style}>
        
@@ -36,6 +34,6 @@ class Login extends React.Component{
 
       </div>
       </div>
-    )}
-
+    )
+  }
 }

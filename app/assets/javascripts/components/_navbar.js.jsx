@@ -8,11 +8,6 @@ class Navbar extends React.Component {
       justifyContent: 'space-between'
     }
 
-    var style = {
-      float: 'right',
-      paddingRight: '2em',
-      paddingTop: '1em'
-    };
 
     var textStyle = {
       paddingTop: '1.5em',
@@ -23,9 +18,6 @@ class Navbar extends React.Component {
 
     };
 
-    var buttonStyle = {
-      padding: '1em'
-    }
 
     return (
       <div id="main_nav" style={boxStyle}>

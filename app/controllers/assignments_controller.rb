@@ -37,11 +37,10 @@ class AssignmentsController < ApplicationController
 
   def update
     puts "UPDATE STATUS" 
-    # assignment = [params[:id], params[:status], params[:score]]
-    # p assignment
+
     assignment = AssignmentPerformance.find(params[:id])
     assignment.update_attributes(assignment_params)
-    # render json: assignment
+
     redirect_to '/teachers' 
   end
 

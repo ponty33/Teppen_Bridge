@@ -8,40 +8,6 @@ class Tassignment extends React.Component {
     }
   }
 
-  // handleEdit(){
-  //   if(this.state.editable){
-  //     let status = this.status.value
-  //     let score = this.score.value
-  //     let id = assignment.id
-  //     let assignment = {id: id, status: status, score: score}
-  //     console.log(assignment)
-  //     handleUpdate(assignment)
-  //   }
-  //   this.setState({
-  //     editable: !this.state.editable
-  //   })
-  // }
-
-  handleUpdate(assignemntper) {
-    //   fetch(`http://localhost:3000/api/v1/fruits/${assignmentper.id}`, 
-    //   {
-    //     method: 'PUT',
-    //     body: JSON.stringify({assignemntper: assignemntper}),
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     }
-    //   }).then((response) => { 
-    //       this.updateStatus(assignemntper)
-    //     })
-  }
-
-  // updateStatus(assignemntper){
-  //   let newAssignments = this.state.assignments.filter((a) => a.id !== assignemntper.id)
-  //   newAssignments.push(assignemntper)
-  //   this.setState({
-  //     assignments: newAssignments
-  //   })
-  // }
 
   componentDidMount() {
     fetch(`/teachers/${this.props.teacher_id}/assignments/`)
@@ -62,7 +28,7 @@ class Tassignment extends React.Component {
       let score = this.state.editable ? <input type='text' ref={input => this.score = input} defaultValue={assignment.score} /> : <h3>{assignment.score}</h3>
       return (
         <div key={assignment.id}>
-          <Tassignmentper teacher_id={this.props.teacher_id} assignment={assignment} handleUpdate={this.handleUpdate} />
+          <Tassignmentper teacher_id={this.props.teacher_id} assignment={assignment} />
         </div>
       )
     })
@@ -82,9 +48,3 @@ class Tassignment extends React.Component {
     )
   }
 }
-
-// t.string "name"
-// t.text "content"
-// t.date "start_date"
-// t.date "end_date"
-// t.integer "program_id"

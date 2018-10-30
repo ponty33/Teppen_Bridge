@@ -21,10 +21,7 @@ class Footer extends React.Component {
 
     return (
       <div id="main_nav" style={boxStyle}>
-        {/* <div id="main_nav_logo">
-          <img src={asset_paths.teppen_bridge} />
-        </div> */}
-         <div style={contactBox}>
+        <div style={contactBox}>
           <div className="card border-secondary mb-3" style={style}>
             <div className="card-header">Contact us</div>
             <div className="card-body text-secondary">
@@ -48,5 +45,4 @@ class Footer extends React.Component {
       </div>
     )
   }
-
 }
