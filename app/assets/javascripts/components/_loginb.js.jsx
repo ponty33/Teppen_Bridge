@@ -1,8 +1,5 @@
 function Loginb(props) {
-  var buttonStyle = {
-    padding: '1em'
-  }
-  
+
   if (props.user_id === 0) {
     return(
       <form className="d-flex align-items-end" action='/login' method='get'>

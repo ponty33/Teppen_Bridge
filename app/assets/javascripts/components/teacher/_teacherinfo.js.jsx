@@ -10,6 +10,7 @@ class Teacherinfo extends React.Component{
     };
     this.updateState = this.updateState.bind(this);
   }
+
   componentDidMount() {
     fetch(`/session_info`)
     .then((response) => {
@@ -25,6 +26,7 @@ class Teacherinfo extends React.Component{
       });
     })
   }
+
   updateState(state) {
     this.setState ({
       page: state,
@@ -52,6 +54,6 @@ class Teacherinfo extends React.Component{
         <Teachertab  updateState = {this.updateState}/>
         {childComponent}
       </div>
-    )}
-
+    )
+  }
 }

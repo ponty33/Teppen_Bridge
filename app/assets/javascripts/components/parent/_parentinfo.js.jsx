@@ -1,7 +1,6 @@
 class Parentinfo extends React.Component {
 
   constructor(props) {
-    // window.paths = props.paths;
     super(props);
     this.state = {
       page: 'profile',

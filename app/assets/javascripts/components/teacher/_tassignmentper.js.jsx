@@ -3,7 +3,6 @@ class Tassignmentper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // editable: false,
     }
     this.handleEdit = this.handleEdit.bind(this)
   }
@@ -15,13 +14,10 @@ class Tassignmentper extends React.Component {
     let id = this.props.assignment.id
     let assignment = { id: id, status: status, score: score }
     console.log(assignment)
-    // this.props.handleUpdate(assignment)
   }
 
   render() {
     let assignment = this.props.assignment
-    // let status = this.state.editable ? <input type='text' ref={input => this.status = input} defaultValue={assignment.status}/>:<h3>{assignment.status}</h3>
-    // let score = this.state.editable ? <input type='text' ref={input => this.score = input} defaultValue={assignment.score}/>:<h3>{assignment.score}</h3>  
     return (
       <div className="teacherReview_box">
         <div id="teacher_assignment_status">
@@ -60,14 +56,6 @@ class Tassignmentper extends React.Component {
               <div><label htmlFor="InputStatus"><h5 id="test2">Status:</h5></label></div>
               <div id="test2"><input type="text" name='status' className="form-control" id="InputStatus" aria-describedby="emailHelp" placeholder="Enter status" /></div>
             </div>
-
-
-
-            {/* <div className="form-group">
-              <label htmlFor="InputStatus"><h5 id="test2">Status:</h5></label>
-              <input className="test2" type="text" name='status' className="form-control" id="InputStatus" aria-describedby="emailHelp" placeholder="Enter status" />
-            </div> */}
-
 
             <div className="form-group">
               <div><label htmlFor="InputScore"><h5 id="test2">Score:</h5></label></div>
