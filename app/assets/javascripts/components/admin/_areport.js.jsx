@@ -164,7 +164,9 @@ class Areport extends React.Component {
           <img src={asset_paths.chart} />
         </div>
         <div className="graphchart">
-
+          <div id="admin_report_title">Total Earnings from Teacher vs Income of Teacher</div>
+          <br></br>
+          <br></br>
           <div id="admin_chart_title">{`Total Gross earnings  $ ${this.getTotalEarnings()}`}</div>
           < svg width={width} height={height + xAxisHeight}>
             {this.createBox()}
