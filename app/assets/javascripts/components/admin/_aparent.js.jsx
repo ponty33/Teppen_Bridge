@@ -24,7 +24,7 @@ class Aparent extends React.Component {
       var students = parent.student.map((stud) => {
         return (
           <div key={stud.id}>
-            <h2>{stud.name}</h2>
+            <h2 id="admin_parents_students">{stud.name}</h2>
           </div>
         )
       })
@@ -44,7 +44,7 @@ class Aparent extends React.Component {
 
           <div id="text_container">
             <h3 id="text_teacher_reviews">Registered Students:</h3>
-            <h3 id="admin_parents_students">{students}</h3>
+            <div>{students}</div>
           </div>
 
         </div>
