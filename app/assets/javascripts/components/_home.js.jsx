@@ -26,11 +26,11 @@ class Home extends React.Component {
     var style = {
       display: 'flex',
       justifyContent: 'space-evenly',
-      paddingTop: '2em'
+      paddingTop: '1.2em'
     };
 
     var imgStyle = {
-      borderRadius: '9em'
+      borderRadius: '20em'
     }
 
     var cardStyle = {
@@ -55,7 +55,7 @@ class Home extends React.Component {
     return (
       <div>
         <Navbar user_id={this.state.user_id} />
-        <h1 style={style}>Our Teachers</h1>
+        <p id="homepage_text" style={style}>Our Teachers</p>
         <div style={style}>
           {teachers}
         </div>
@@ -63,7 +63,7 @@ class Home extends React.Component {
           <div className="card">
             <div className="card-body" style={style}>
               <blockquote className="blockquote mb-0">
-                <p>If a man neglects education, he walks lame to the end of his life.</p>
+                <p id="homepage_slogan">If a man neglects education, he walks lame to the end of his life.</p>
                 <footer className="blockquote-footer">Plato</footer>
               </blockquote>
             </div>
@@ -75,6 +75,7 @@ class Home extends React.Component {
             <div className="card-body">
               <h5 className="card-title">Professional</h5>
               <p className="card-text">Choose from our professional team to get help for specific subject.</p>
+              <p id="homepage_cards" className="card-text"><img src={asset_paths.success} /></p>
             </div>
           </div>
           <div className="card text-white bg-info mb-3" style={cardStyle}>
@@ -82,6 +83,7 @@ class Home extends React.Component {
             <div className="card-body">
               <h5 className="card-title">Connect</h5>
               <p className="card-text">Parents never have to worry about their children's school performace again.</p>
+              <p id="homepage_cards" className="card-text"><img src={asset_paths.confidence} /></p>
             </div>
           </div>
           <div className="card bg-light mb-3" style={cardStyle}>
@@ -89,6 +91,7 @@ class Home extends React.Component {
             <div className="card-body">
               <h5 className="card-title">Sign up for free</h5>
               <p className="card-text">Register as a Teppen Bridge parent completely free of charge.</p>
+              <p id="homepage_cards" className="card-text"><img src={asset_paths.easy} /></p>
             </div>
           </div>
         </div>
