@@ -59,20 +59,20 @@ puts "Creating Parents ..."
 
 parent1 = Parent.create(
   name:'David Williams',
-  email:'abc@gmail.com',
+  email:'david@gmail.com',
   password:'123'
 )
 
 parent2 = Parent.create(
   name:'John Smith',
-  email:'def@gmail.com',
+  email:'john@gmail.com',
   password: '123'
 )
 
 
 parent3 = Parent.create(
   name:'Jenny Chang',
-  email:'aaa@gmail.com',
+  email:'jenny@gmail.com',
   password: '123'
 )
 
@@ -266,7 +266,7 @@ AssignmentPerformance.create(
   student_id: student4.id,
   status: 'Marked',
   score: 40,
-  feedback: 'Excellent '
+  feedback: 'Need more improvement'
 )
 
 
@@ -275,7 +275,7 @@ AssignmentPerformance.create(
   student_id: student4.id,
   status: 'Marked',
   score: 60,
-  feedback: 'GOOD'
+  feedback: 'Please be prepared next time'
 )
 
 
@@ -291,7 +291,7 @@ AssignmentPerformance.create(
   student_id: student1.id,
   status: 'Marked',
   score: 50,
-  feedback: 'GOOD'
+  feedback: 'You shall not pass'
 )
 
 AssignmentPerformance.create(
@@ -299,21 +299,21 @@ AssignmentPerformance.create(
   student_id: student1.id,
   status: 'Marked',
   score: 70,
-  feedback: 'GOOD'
+  feedback: 'GOOD!'
 )
 AssignmentPerformance.create(
   assignment_id: assignment1.id,
   student_id: student1.id,
   status: 'Marked',
   score: 50,
-  feedback: 'GOOD'
+  feedback: 'Study harder'
 )
 AssignmentPerformance.create(
   assignment_id: assignment2.id,
   student_id: student1.id,
   status: 'Marked',
   score: 30,
-  feedback: 'Do good next time'
+  feedback: 'You should study'
 )
 AssignmentPerformance.create(
   assignment_id: assignment2.id,
@@ -328,7 +328,7 @@ AssignmentPerformance.create(
   student_id: student1.id,
   status: 'Marked',
   score: 30,
-  feedback: 'Good!'
+  feedback: 'Please seek for help'
 )
 
 Admission.create(
