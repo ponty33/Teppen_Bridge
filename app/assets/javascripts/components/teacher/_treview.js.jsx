@@ -39,7 +39,7 @@ class Treview extends React.Component {
           </div>
 
           <div id="text_container">
-            <h3 id="text_teacher_reviews">Score:</h3>
+            <h3 id="text_teacher_reviews">Comment:</h3>
             <h3>{review.content}</h3>
           </div>
 

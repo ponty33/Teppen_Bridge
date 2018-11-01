@@ -10,12 +10,10 @@ class Navbar extends React.Component {
 
 
     var textStyle = {
-      paddingTop: '1.5em',
+      paddingTop: '2em',
       textAlign: 'center',
-      fontSize: '2.5em',
-      fontFamily: 'Asap Condensed',
-      fontSize: '55px'
-
+      fontSize: '43px',
+      fontFamily: 'Alfa Slab One',
     };
 
 

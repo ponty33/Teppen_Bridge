@@ -3,6 +3,7 @@ class Tassignmentper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      assignment: this.props.assignment
     }
     this.handleEdit = this.handleEdit.bind(this)
   }

@@ -41,7 +41,7 @@ class AssignmentsController < ApplicationController
     assignment = AssignmentPerformance.find(params[:id])
     assignment.update_attributes(assignment_params)
 
-    redirect_to '/teachers' 
+   # redirect_to '/teachers' 
   end
 
   private
